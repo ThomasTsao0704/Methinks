@@ -416,34 +416,36 @@ textarea {
 
 /* iPhone Frame */
 .iphone-frame {
-    width: 375px;
+    width: 395px;
     height: 667px;
     border: 16px solid black;
     border-radius: 36px;
     padding: 10px;
     background-color: white;
     overflow-y: auto;
+    display: inline-block;
+    margin:0 20px;
 }
-
+.ipad-frame {
+    width: 960px;
+    height: 720px;
+    border: 16px solid black;
+    border-radius: 36px;
+    padding: 25px;
+    background-color: white;
+    overflow-y: auto;
+    display: inline-block;
+    margin:0 30px;
+}
 /* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 10 px;
 }
 
-.header-left .shopping-icon,
-.header-right .menu-icon {
-    font-size: 24px;
-}
 
-.header-center input {
-    width: 200px;
-    padding: 8px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
 
 /* Horizontal Scrollable Section */
 .horizontal-scroll-section {
@@ -458,7 +460,7 @@ header {
 }
 
 .scroll-item {
-    display: inline-block;
+    display:inline-block;
     text-align: center;
 }
 
@@ -551,7 +553,7 @@ header {
     margin: 10px 0;
 }
 
-/* i phone */ 
+/* 股票操作方向 */ 
 
 .products__sort {
     display: flex;
@@ -559,7 +561,7 @@ header {
 }
 
 .products__sort .button {
-    padding: 12px 24px;
+    padding: 10px 24px;
     margin: 0 12px 12px 0;
     border: none;
     border-radius: 6px;
@@ -575,18 +577,19 @@ header {
 .products__wrap {
     display: flex;
     flex-flow: wrap;
-    margin: 48px 0 0;
+    margin: 24px 5px;
 }
 
 .products__wrap .product {
-    height: 112px;
-    width: 112px;
-    padding: 16px 32px;
-    margin: 0 16px 16px 0;
+    height: 97px;
+    width: 97px;
+    padding: 10px 8px;
+    margin: 0 14px 14px 0;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     background-color: rgba(0, 127, 212, 0.5);
     color: #001988;
+    text-align: center;
 }
 
 .products .sort-radio {

@@ -1,7 +1,7 @@
 $(function () {
     new ProductTableApp(
         $('#product-table-app'),
-        'https://gist.githubusercontent.com/yha-1228/dafe947f4437e83deb91136203cb1f2b/raw/2b8de5fb6126a51d750bfd38ef38464fdb44f8cf/products.json',
+        'https://thomastsao0704.github.io/stock/js/products.json',
     );
 });
 
@@ -196,7 +196,7 @@ class ProductTableApp {
                             product.stocked
                                 ? <i class="fas fa-check-circle light-text"></i>${twoSpace}In stock
                             : <i class="fas fa-minus-circle light-text"></i>${twoSpace}Out of stock
-              }</td>
+            }</td>
                         <td class="table-cell align-left">${product.created_at}</td>
                         <td class="table-cell align-left">${product.updated_at}</td>
                     </tr>,
