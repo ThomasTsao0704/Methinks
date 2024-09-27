@@ -1,7 +1,7 @@
 $(function () {
     new ProductTableApp(
         $('#product-table-app'),
-        'js/products.json',
+        'products.json',
     );
 });
 
