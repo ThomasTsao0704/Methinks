@@ -44,6 +44,98 @@
                 </h1>
             </div>
         </section>
+        <section>
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <div class="tradingview-widget-copyright"><a href="https://tw.tradingview.com/" rel="noopener nofollow"
+                        target="_blank"><span class="blue-text">追蹤TradingView上的所有市場</span></a></div>
+                <script type="text/javascript"
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                        {
+                            "symbols": [
+                                {
+                                    "description": "美元/台幣",
+                                    "proName": "FX_IDC:USDTWD"
+                                },
+                                {
+                                    "description": "美元/日幣",
+                                    "proName": "FX_IDC:USDJPY"
+                                },
+                                {
+                                    "description": "美元/人民幣",
+                                    "proName": "FX_IDC:USDCNH"
+                                },
+                                {
+                                    "description": "美元/韓圜",
+                                    "proName": "FX_IDC:USDKRW"
+                                },
+                                {
+                                    "description": "美元/黃金",
+                                    "proName": "TVC:GOLD"
+                                }
+                            ],
+                                "showSymbolLogo": true,
+                                    "isTransparent": true,
+                                        "displayMode": "adaptive",
+                                            "colorTheme": "light",
+                                                "locale": "zh_TW"
+                        }
+                    </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </section>
+        <section>
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript"
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js" async>
+                        {
+                            "width": "100%",
+                                "height": "400PX",
+                                    "currencies": [
+                                        "USD",
+                                        "JPY",
+                                        "GBP",
+                                        "AUD",
+                                        "CNY",
+                                        "KRW",
+                                        "TWD"
+                                    ],
+                                        "isTransparent": true,
+                                            "colorTheme": "dark",
+                                                "locale": "zh_TW"
+                        }
+                    </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </section>
+        <div>
+            <section>
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <div class="tradingview-widget-copyright"><a href="https://tw.tradingview.com/"
+                            rel="noopener nofollow" target="_blank"><span
+                                class="blue-text">追蹤TradingView上的所有市場</span></a></div>
+                    <script type="text/javascript"
+                        src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
+                            {
+                                "isTransparent": false;
+                                    "largeChartUrl":" ";
+                                        "displayMode": "compact";
+                                            "width": "100%";
+                                                "height": "100%";
+                                                    "colorTheme": "light";
+                                                        "symbol": "TWSE:2330";
+                                                            "locale": "zh_TW";
+                            }
+                        </script>
+                </div>
+                <!-- TradingView Widget END -->
+            </section>
+        </div>
         <section style="background-color: blue;">
             <div class="iphone-frame">
                 <header>
@@ -74,12 +166,12 @@
                     </div>
                 </div>
             </div>
-            <div class="ipad-frame"> 
+            <div class="ipad-frame">
                 <header>
                     <center>
-                    <h3>股票查詢
-                    </h3>
-                </center>
+                        <h3>股票查詢
+                        </h3>
+                    </center>
                 </header>
                 <div class="container">
                     <h1 class="heading-lv1">Products</h1>
@@ -213,8 +305,61 @@
             <!--horizontal scroll-->
 
         </section>
-
-
+        <section>
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <div class="tradingview-widget-copyright"><a href="https://tw.tradingview.com/" rel="noopener nofollow"
+                        target="_blank"><span class="blue-text">追蹤TradingView上的所有市場</span></a></div>
+                <script type="text/javascript"
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+                        {
+                            "interval": "1m",
+                                "width": 425,
+                                    "isTransparent": false,
+                                        "height": 450,
+                                            "symbol": "TWSE:2330",
+                                                "showIntervalTabs": true,
+                                                    "displayMode": "single",
+                                                        "locale": "zh_TW",
+                                                            "colorTheme": "dark"
+                        }
+                    </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </section>
+        <section>
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript"
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js" async>
+                        {
+                            "colorTheme": "light",
+                                "dateRange": "12M",
+                                    "exchange": "TPEX",
+                                        "showChart": true,
+                                            "locale": "zh_TW",
+                                                "largeChartUrl": "",
+                                                    "isTransparent": false,
+                                                        "showSymbolLogo": false,
+                                                            "showFloatingTooltip": false,
+                                                                "width": "400",
+                                                                    "height": "550",
+                                                                        "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+                                                                            "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+                                                                                "gridLineColor": "rgba(240, 243, 250, 0)",
+                                                                                    "scaleFontColor": "rgba(19, 23, 34, 1)",
+                                                                                        "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+                                                                                            "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+                                                                                                "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+                                                                                                    "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+                                                                                                        "symbolActiveColor": "rgba(41, 98, 255, 0.12)"
+                        }
+                    </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </section>
         <section class="all_projects mp">
 
             <div class="all_projects_ball">
@@ -270,37 +415,37 @@
 
         <section class="service mp">
             <h2>Service</h2>
-                <div class="service">
-                    <h3>Brand Strategy</h3>
-                    <p>A plan for developing your brand based on discovering your potential.<br>
-                    <ul>
-                        <li>Research</li>
-                        <li>Discovering the Brand Uniqueness</li>
-                        <li>Discovering your Value Proposition</li>
-                        <li>Brand Personality</li>
-                        <li>Visual Identity (Logotype, Typography & Colour Palette)</li>
-                        <li>Packaging Design</li>
-                        <li>Graphic Design</li>
-                        <li>Brand Guidelines</li>
-                        <li>Photography & Video Production</li>
-                    </ul>
-                    </p>
-                </div>
-                <div class="service">
-                    <h3>Websites</h3>
-                    <p>
-                        Our website design showcases your brand's uniqueness and engages your audience. We develop
-                        custom solutions that are both easy to use and tailored to specific business requirements.
-                    <ul>
-                        <li>UI/UX Design</li>
-                        <li>Sotware UI design</li>
-                        <li>Web app design& development</li>
-                        <li>Frontend & Backend Development</li>
-                        <li>E-commerce</li>
-                        <li>Inrteractive websites design & development</li>
-                    </ul>
-                    </p>
-                </div>
+            <div class="service">
+                <h3>Brand Strategy</h3>
+                <p>A plan for developing your brand based on discovering your potential.<br>
+                <ul>
+                    <li>Research</li>
+                    <li>Discovering the Brand Uniqueness</li>
+                    <li>Discovering your Value Proposition</li>
+                    <li>Brand Personality</li>
+                    <li>Visual Identity (Logotype, Typography & Colour Palette)</li>
+                    <li>Packaging Design</li>
+                    <li>Graphic Design</li>
+                    <li>Brand Guidelines</li>
+                    <li>Photography & Video Production</li>
+                </ul>
+                </p>
+            </div>
+            <div class="service">
+                <h3>Websites</h3>
+                <p>
+                    Our website design showcases your brand's uniqueness and engages your audience. We develop
+                    custom solutions that are both easy to use and tailored to specific business requirements.
+                <ul>
+                    <li>UI/UX Design</li>
+                    <li>Sotware UI design</li>
+                    <li>Web app design& development</li>
+                    <li>Frontend & Backend Development</li>
+                    <li>E-commerce</li>
+                    <li>Inrteractive websites design & development</li>
+                </ul>
+                </p>
+            </div>
             </div>
 
             <div class="grid logici">
