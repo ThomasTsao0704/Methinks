@@ -1,7 +1,7 @@
 $(function () {
     new ProductTableApp(
         $('#product-table-app'),
-        'https://thomastsao0704.github.io/stock/js/products.json',
+        'js/products.json',
     );
 });
 
