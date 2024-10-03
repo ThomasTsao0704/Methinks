@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stock</title>
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"></script>
@@ -14,297 +14,84 @@
 </head>
 
 <body>
-    <header class="mp">
-        <div class="grid">
-            <div class="g12 m-g3 logo">
-                <img src="https://madebyunbranded.com/img/unbranded_logo_2021.svg" alt="unbranded logo">
-            </div>
-            <div class="g12 m-g3">
-                <a class="ap" href="#" title="all projects">ALL PROJECTS</a>
-            </div>
-            <div class="g12 m-g3 tar">
-                <a class="wwu" href="#" title="work with us">Stock</a>
-            </div>
-            <div class="g12 m-g3 tar">
-                <div class="mbtn">---</div>
-            </div>
+    <section class="hero mp">
+        <div class="h2">
+            <h2>
+                要知道你打撲克牌時，總有一個人會倒楣，如果你看看四周看不出誰要倒楣了，那就是你自己了。<br><strong>狀況會重複, 因為人的天性不會改變</strong>
+            </h2>
         </div>
-    </header>
-
-    <main>
-        <section class="hero mp">
-            <div class="h2">
-                <h2>
-                    要知道你打撲克牌時，總有一個人會倒楣，如果你看看四周看不出誰要倒楣了，那就是你自己了。<br><strong>狀況會重複, 因為人的天性不會改變</strong>
-                </h2>
-            </div>
-            <div class="h1">
-                <h1>
-                    <strong>Thomas</strong>STOCK
-                </h1>
-            </div>
-        </section>
-        <section>
-            <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget"></div>
-                <div class="tradingview-widget-copyright"><a href="https://tw.tradingview.com/" rel="noopener nofollow"
-                        target="_blank"><span class="blue-text">追蹤TradingView上的所有市場</span></a></div>
-                <script type="text/javascript"
-                    src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-                        {
-                            "symbols": [
-                                {
-                                    "description": "美元/台幣",
-                                    "proName": "FX_IDC:USDTWD"
-                                },
-                                {
-                                    "description": "美元/日幣",
-                                    "proName": "FX_IDC:USDJPY"
-                                },
-                                {
-                                    "description": "美元/人民幣",
-                                    "proName": "FX_IDC:USDCNH"
-                                },
-                                {
-                                    "description": "美元/韓圜",
-                                    "proName": "FX_IDC:USDKRW"
-                                },
-                                {
-                                    "description": "美元/黃金",
-                                    "proName": "TVC:GOLD"
-                                }
-                            ],
-                                "showSymbolLogo": true,
-                                    "isTransparent": true,
-                                        "displayMode": "adaptive",
-                                            "colorTheme": "light",
-                                                "locale": "zh_TW"
-                        }
-                    </script>
-            </div>
-            <!-- TradingView Widget END -->
-        </section>
-        <section>
-            <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget"></div>
-                <script type="text/javascript"
-                    src="https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js" async>
-                        {
-                            "width": "100%",
-                                "height": "400PX",
-                                    "currencies": [
-                                        "USD",
-                                        "JPY",
-                                        "GBP",
-                                        "AUD",
-                                        "CNY",
-                                        "KRW",
-                                        "TWD"
-                                    ],
-                                        "isTransparent": true,
-                                            "colorTheme": "dark",
-                                                "locale": "zh_TW"
-                        }
-                    </script>
-            </div>
-            <!-- TradingView Widget END -->
-        </section>
-        <div>
-            <section>
-                <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container">
-                    <div class="tradingview-widget-container__widget"></div>
-                    <div class="tradingview-widget-copyright"><a href="https://tw.tradingview.com/"
-                            rel="noopener nofollow" target="_blank"><span
-                                class="blue-text">追蹤TradingView上的所有市場</span></a></div>
-                    <script type="text/javascript"
-                        src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
+        <div class="h1">
+            <h1>
+                <strong>Thomas</strong>STOCK
+            </h1>
+        </div>
+    </section>
+    <section>
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"></div>
+            <script type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [
                             {
-                                "isTransparent": false;
-                                "largeChartUrl": " ";
-                                "displayMode": "compact";
-                                "width": "100%";
-                                "height": "100%";
-                                "colorTheme": "light";
-                                "symbol": "TWSE:2330";
-                                "locale": "zh_TW";
+                                "description": "美元/台幣",
+                                "proName": "FX_IDC:USDTWD"
+                            },
+                            {
+                                "description": "美元/日幣",
+                                "proName": "FX_IDC:USDJPY"
+                            },
+                            {
+                                "description": "美元/人民幣",
+                                "proName": "FX_IDC:USDCNH"
+                            },
+                            {
+                                "description": "美元/韓圜",
+                                "proName": "FX_IDC:USDKRW"
+                            },
+                            {
+                                "description": "美元/黃金",
+                                "proName": "TVC:GOLD"
                             }
-                        </script>
-                </div>
-                <!-- TradingView Widget END -->
-            </section>
+                        ],
+                            "showSymbolLogo": true,
+                                "isTransparent": true,
+                                    "displayMode": "adaptive",
+                                        "colorTheme": "light",
+                                            "locale": "zh_TW"
+                    }
+                </script>
         </div>
-        <section style="background-color: blue;">
-            <div class="iphone-frame">
-                <header>
-                    <center>
-                        <h3>股票操作方向</h3>
-                    </center>
-                </header>
-                <div class="products">
-                    <input class="sort-radio" type="radio" name="sort-radio" id="longe" />
-                    <input class="sort-radio" type="radio" name="sort-radio" id="short" />
-                    <input class="sort-radio" type="radio" name="sort-radio" id="Alert" />
-                    <div class="products__sort">
-                        <label class="button" for="longe">看多</label>
-                        <label class="button" for="short">看空</label>
-                        <label class="button" for="Alert">警示股</label>
-                    </div>
-                    <div class="products__wrap">
-                        <div class="product" data-product-type="longe"><span>8374</span><br>羅昇</div>
-                        <div class="product" data-product-type="longe"><span>股票代號</span><br>股票名稱</div>
-                        <div class="product" data-product-type="longe"><span>股票代號</span><br>股票名稱</div>
-                        <div class="product" data-product-type="short"><span>6706</span><br>惠特</div>
-                        <div class="product" data-product-type="short"><span>6706</span><br>惠特</div>
-                        <div class="product" data-product-type="short"><span>2425</span><br>承起</div>
-                        <div class="product" data-product-type="short"><span>股票代號</span><br>股票名稱</div>
-                        <div class="product" data-product-type="Alert"><span>股票代號</span><br>股票名稱</div>
-                        <div class="product" data-product-type="Alert"><span>股票代號</span><br>股票名稱</div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="ipad-frame">
-                <header>
-                    <center>
-                        <h3>股票查詢
-                        </h3>
-                    </center>
-                </header>
-                <div class="container">
-                    <h1 class="heading-lv1">Products</h1>
-                    <div class="table-app" id="product-table-app">
-                        <div class="table-handler">
-                            <div class="table-handler-dropdown-cell">
-                                <div class="dropdown">
-                                    <h3 class="dropdown-heading">
-                                        <i class="fas fa-filter"></i> Brand
-                                    </h3>
-                                    <select class="select js-handle-table js-filter" id="filter-brand">
-                                        <option value="all">All</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="table-handler-dropdown-cell">
-                                <div class="dropdown">
-                                    <h3 class="dropdown-heading">
-                                        <i class="fas fa-filter"></i> Category
-                                    </h3>
-                                    <select class="select js-handle-table js-filter" id="filter-category">
-                                        <option value="all">All</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="table-handler-dropdown-cell">
-                                <div class="dropdown">
-                                    <h3 class="dropdown-heading">
-                                        <i class="fas fa-sort-amount-up-alt"></i> Sort by
-                                    </h3>
-                                    <select class="select js-handle-table" id="sort-by">
-                                        <option value="none">-</option>
-                                        <option value="price">Price</option>
-                                        <option value="created_at">Created at</option>
-                                        <option value="updated_at">Updated at</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="table-handler-dropdown-cell">
-                                <!-- TODO: add label and create style -->
-                                <input type="checkbox" class="js-handle-table" id="toggle"
-                                    value="hiding-out-of-stock" />
-                                <label for="toggle">Hiding out-of-stock products</label>
-                            </div>
-                        </div>
-                        <!-- /.table-handler -->
-                        <div class="table-wrapper">
-                            <table class="table" id="table">
-                                <thead>
-                                    <tr class="table-head">
-                                        <th class="table-cell align-right">ID</th>
-                                        <th class="table-cell align-left">Brand</th>
-                                        <th class="table-cell align-left">Name</th>
-                                        <th class="table-cell align-left">Category</th>
-                                        <th class="table-cell align-right">Price</th>
-                                        <th class="table-cell align-left">Status</th>
-                                        <th class="table-cell align-left">Created at</th>
-                                        <th class="table-cell align-left">Updated at</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Loop -->
-                                </tbody>
-                            </table>
-                            <div class="no-results hidden" id="no-results">
-                                <p class="no-results-message">No results found.</p>
-                            </div>
-                            <!-- /#no-results -->
-                        </div>
-                        <!-- /.table-wrapper -->
-                    </div>
-                    <!-- /.table-app -->
-                </div>
-            </div>
-        </section>
-
-        <section class="radovi mp">
-            <h2>Information</h2>
-
-            <div class="hori grid">
-
-
-
-
-                <div class="rad">
-                    <div class="img" id="rad1"></div>
-                    <div class="title">Poliklinic Fem Point</div>
-                    <div class="about">Holistic care for your health</div>
-                    <div class="pills">
-                        <div class="pill"><a
-                                href="https://www.notion.so/Content-Writing-Dashboard-01d2893a66d349bab63fe146b8fc2765rame">Website</a>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="rad">
-                    <div class="img" id="rad2"></div>
-                    <div class="title">Poliklinic Fem Point</div>
-                    <div class="about">Holistic care for your health</div>
-                    <div class="pills">
-                        <div class="pill">Website</div>
-                    </div>
-                </div>
-
-
-
-                <div class="rad">
-                    <div class="img" id="rad3"></div>
-                    <div class="title">Poliklinic Fem Point</div>
-                    <div class="about">Holistic care for your health</div>
-                    <div class="pills">
-                        <div class="pill">Website</div>
-                    </div>
-                </div>
-
-
-
-                <div class="rad">
-                    <div class="img" id="rad4"></div>
-                    <div class="title">Poliklinic Fem Point</div>
-                    <div class="about">Holistic care for your health</div>
-                    <div class="pills">
-                        <div class="pill">Website</div>
-                    </div>
-                </div>
-
-
-            </div>
-            <!--horizontal scroll-->
-
-        </section>
+        <!-- TradingView Widget END -->
+    </section>
+    <section>
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js" async>
+                    {
+                        "width": "100%",
+                            "height": "400PX",
+                                "currencies": [
+                                    "USD",
+                                    "JPY",
+                                    "AUD",
+                                    "CNY",
+                                    "KRW",
+                                    "TWD"
+                                ],
+                                    "isTransparent": true,
+                                        "colorTheme": "light",
+                                            "locale": "zh_TW"
+                    }
+                </script>
+        </div>
+        <!-- TradingView Widget END -->
+    </section>
+    <div>
         <section>
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container">
@@ -312,26 +99,140 @@
                 <div class="tradingview-widget-copyright"><a href="https://tw.tradingview.com/" rel="noopener nofollow"
                         target="_blank"><span class="blue-text">追蹤TradingView上的所有市場</span></a></div>
                 <script type="text/javascript"
-                    src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
                         {
-                            "interval": "1m",
-                                "width": 425,
-                                    "isTransparent": false,
-                                        "height": 450,
-                                            "symbol": "TWSE:2330",
-                                                "showIntervalTabs": true,
-                                                    "displayMode": "single",
-                                                        "locale": "zh_TW",
-                                                            "colorTheme": "dark"
+                            "isTransparent": false;
+                            "largeChartUrl": " ";
+                            "displayMode": "compact";
+                            "width": "100%";
+                            "height": "100%";
+                            "colorTheme": "light";
+                            "symbol": "TWSE:2330";
+                            "locale": "zh_TW";
                         }
                     </script>
             </div>
             <!-- TradingView Widget END -->
         </section>
-        <section>
+    </div>
+    <section style="background-color: blue;">
+        <div class="iphone-frame">
+            <header>
+                <center>
+                    <h3>股票操作方向</h3>
+                </center>
+            </header>
+            <div class="products">
+                <input class="sort-radio" type="radio" name="sort-radio" id="longe" />
+                <input class="sort-radio" type="radio" name="sort-radio" id="short" />
+                <input class="sort-radio" type="radio" name="sort-radio" id="Alert" />
+                <div class="products__sort">
+                    <label class="button" for="longe">看多</label>
+                    <label class="button" for="short">看空</label>
+                    <label class="button" for="Alert">警示股</label>
+                </div>
+                <div class="products__wrap">
+                    <div class="product" data-product-type="longe"><span>8374</span><br>羅昇</div>
+                    <div class="product" data-product-type="longe"><span>股票代號</span><br>股票名稱</div>
+                    <div class="product" data-product-type="longe"><span>股票代號</span><br>股票名稱</div>
+                    <div class="product" data-product-type="short"><span>6706</span><br>惠特</div>
+                    <div class="product" data-product-type="short"><span>6706</span><br>惠特</div>
+                    <div class="product" data-product-type="short"><span>2425</span><br>承起</div>
+                    <div class="product" data-product-type="short"><span>股票代號</span><br>股票名稱</div>
+                    <div class="product" data-product-type="Alert"><span>股票代號</span><br>股票名稱</div>
+                    <div class="product" data-product-type="Alert"><span>股票代號</span><br>股票名稱</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="ipad-frame">
+            <header>
+                <center>
+                    <h3>股票查詢
+                    </h3>
+                </center>
+            </header>
+            <div class="container">
+                <h1 class="heading-lv1">Products</h1>
+                <div class="table-app" id="product-table-app">
+                    <div class="table-handler">
+                        <div class="table-handler-dropdown-cell">
+                            <div class="dropdown">
+                                <h3 class="dropdown-heading">
+                                    <i class="fas fa-filter"></i> Brand
+                                </h3>
+                                <select class="select js-handle-table js-filter" id="filter-brand">
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-handler-dropdown-cell">
+                            <div class="dropdown">
+                                <h3 class="dropdown-heading">
+                                    <i class="fas fa-filter"></i> Category
+                                </h3>
+                                <select class="select js-handle-table js-filter" id="filter-category">
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-handler-dropdown-cell">
+                            <div class="dropdown">
+                                <h3 class="dropdown-heading">
+                                    <i class="fas fa-sort-amount-up-alt"></i> Sort by
+                                </h3>
+                                <select class="select js-handle-table" id="sort-by">
+                                    <option value="none">-</option>
+                                    <option value="price">Price</option>
+                                    <option value="created_at">Created at</option>
+                                    <option value="updated_at">Updated at</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-handler-dropdown-cell">
+                            <!-- TODO: add label and create style -->
+                            <input type="checkbox" class="js-handle-table" id="toggle" value="hiding-out-of-stock" />
+                            <label for="toggle">Hiding out-of-stock products</label>
+                        </div>
+                    </div>
+                    <!-- /.table-handler -->
+                    <div class="table-wrapper">
+                        <table class="table" id="table">
+                            <thead>
+                                <tr class="table-head">
+                                    <th class="table-cell align-right">ID</th>
+                                    <th class="table-cell align-left">Brand</th>
+                                    <th class="table-cell align-left">Name</th>
+                                    <th class="table-cell align-left">Category</th>
+                                    <th class="table-cell align-right">Price</th>
+                                    <th class="table-cell align-left">Status</th>
+                                    <th class="table-cell align-left">Created at</th>
+                                    <th class="table-cell align-left">Updated at</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Loop -->
+                            </tbody>
+                        </table>
+                        <div class="no-results hidden" id="no-results">
+                            <p class="no-results-message">No results found.</p>
+                        </div>
+                        <!-- /#no-results -->
+                    </div>
+                    <!-- /.table-wrapper -->
+                </div>
+                <!-- /.table-app -->
+            </div>
+        </div>
+    </section>
+
+    <section class="radovi mp">
+        <h2>Information</h2>
+
+        <div class="hori grid">
             <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget"></div>
+            <div class="rad">
+                <div id="rad1"></div>
                 <script type="text/javascript"
                     src="https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js" async>
                         {
@@ -357,270 +258,314 @@
                                                                                                         "symbolActiveColor": "rgba(41, 98, 255, 0.12)"
                         }
                     </script>
+                <div class="title">Poliklinic Fem Point</div>
+                <div class="about">Holistic care for your health</div>
+                <div class="pills">
+                    <div class="pill"><a
+                            href="https://www.notion.so/Content-Writing-Dashboard-01d2893a66d349bab63fe146b8fc2765rame">Website</a>
+                    </div>
+                </div>
             </div>
             <!-- TradingView Widget END -->
-        </section>
-        <section class="all_projects mp">
 
-            <div class="all_projects_ball">
-                ALL PROJECTS
+
+
+
+
+            <div class="rad">
+                <div class="img" id="rad2"></div>
+                <div class="title">Poliklinic Fem Point</div>
+                <div class="about">Holistic care for your health</div>
+                <div class="pills">
+                    <div class="pill">Website</div>
+                </div>
             </div>
 
 
-        </section>
-        <div>
-            <iframe
-                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRSD_68foVx4UqBZQo0rwx9v9MKDWcwV86F35WN4QKzmzohmIXghKOiWxCu0mzB1ENokC4fCzgwNzZ/pubhtml?gid=1869559944&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-        </div>
-        <A href="https://docs.google.com/spreadsheets/d/1bzDKMAdViclpGFKCGz0IPpHZATRb18cQpeckYxr1r0o/edit?usp=sharing">點我</A>
-        <section class="reviews mp">
 
-            <div class="grid">
-                <div class="g12 m-g3 grid">
-                    <div class="g4 m-g12 review_btn active">solidian & kelteks</div>
-                    <div class="g4 m-g12 review_btn">Veek IT Consulting</div>
-                    <div class="g4 m-g12 review_btn">Pixeltale</div>
+            <div class="rad">
+                <div class="img" id="rad3"></div>
+                <div class="title">Poliklinic Fem Point</div>
+                <div class="about">Holistic care for your health</div>
+                <div class="pills">
+                    <div class="pill">Website</div>
                 </div>
-                <div class="g12 m-g9">
-                    <div class="review" id="review1">
-                        Great website creators! They made our website and we are very happy. Professional communication
-                        and good teamwork and cooperation with us. I can recommend 100%!
+            </div>
+
+
+
+            <div class="rad">
+                <div class="img" id="rad4"></div>
+                <div class="title">Poliklinic Fem Point</div>
+                <div class="about">Holistic care for your health</div>
+                <div class="pills">
+                    <div class="pill">Website</div>
+                </div>
+            </div>
+
+
+        </div>
+        <!--horizontal scroll-->
+
+    </section>
+    
+    <section class="all_projects mp">
+
+        <div class="all_projects_ball">
+            ALL PROJECTS
+        </div>
+
+
+    </section>
+    <div>
+        <iframe
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRSD_68foVx4UqBZQo0rwx9v9MKDWcwV86F35WN4QKzmzohmIXghKOiWxCu0mzB1ENokC4fCzgwNzZ/pubhtml?gid=1869559944&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+    </div>
+    <A
+        href="https://docs.google.com/spreadsheets/d/1bzDKMAdViclpGFKCGz0IPpHZATRb18cQpeckYxr1r0o/edit?usp=sharing">點我</A>
+    <section class="reviews mp">
+
+        <div class="grid">
+            <div class="g12 m-g3 grid">
+                <div class="g4 m-g12 review_btn active">solidian & kelteks</div>
+                <div class="g4 m-g12 review_btn">Veek IT Consulting</div>
+                <div class="g4 m-g12 review_btn">Pixeltale</div>
+            </div>
+            <div class="g12 m-g9">
+                <div class="review" id="review1">
+                    Great website creators! They made our website and we are very happy. Professional communication
+                    and good teamwork and cooperation with us. I can recommend 100%!
+                    <div class="signature">
+                        Lars Breuer
+                        <small>General director of Kelteks d.o.o.</small>
+                    </div>
+
+                    <div class="review" id="review2">
+                        Great website creators! They made our website and we are very happy. Professional
+                        communication and good teamwork and cooperation with us. I can recommend 100%!
                         <div class="signature">
                             Lars Breuer
                             <small>General director of Kelteks d.o.o.</small>
                         </div>
 
-                        <div class="review" id="review2">
+                        <div class="review" id="review3">
                             Great website creators! They made our website and we are very happy. Professional
                             communication and good teamwork and cooperation with us. I can recommend 100%!
                             <div class="signature">
                                 Lars Breuer
                                 <small>General director of Kelteks d.o.o.</small>
                             </div>
-
-                            <div class="review" id="review3">
-                                Great website creators! They made our website and we are very happy. Professional
-                                communication and good teamwork and cooperation with us. I can recommend 100%!
-                                <div class="signature">
-                                    Lars Breuer
-                                    <small>General director of Kelteks d.o.o.</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-        </section>
-
-
-
-
-
-        <section class="service mp">
-            <h2>Service</h2>
-            <div class="service">
-                <h3>Brand Strategy</h3>
-                <p>A plan for developing your brand based on discovering your potential.<br>
-                <ul>
-                    <li>Research</li>
-                    <li>Discovering the Brand Uniqueness</li>
-                    <li>Discovering your Value Proposition</li>
-                    <li>Brand Personality</li>
-                    <li>Visual Identity (Logotype, Typography & Colour Palette)</li>
-                    <li>Packaging Design</li>
-                    <li>Graphic Design</li>
-                    <li>Brand Guidelines</li>
-                    <li>Photography & Video Production</li>
-                </ul>
-                </p>
-            </div>
-            <div class="service">
-                <h3>Websites</h3>
-                <p>
-                    Our website design showcases your brand's uniqueness and engages your audience. We develop
-                    custom solutions that are both easy to use and tailored to specific business requirements.
-                <ul>
-                    <li>UI/UX Design</li>
-                    <li>Sotware UI design</li>
-                    <li>Web app design& development</li>
-                    <li>Frontend & Backend Development</li>
-                    <li>E-commerce</li>
-                    <li>Inrteractive websites design & development</li>
-                </ul>
-                </p>
-            </div>
-            </div>
-
-            <div class="grid logici">
-                <div class="g6 s-g4 m-g3">
-                    <div class="brand">logo</div>
-                </div>
-                <div class="g6 s-g4 m-g3">
-                    <div class="brand">logo</div>
-                </div>
-                <div class="g6 s-g4 m-g3">
-                    <div class="brand">logo</div>
-                </div>
-                <div class="g6 s-g4 m-g3">
-                    <div class="brand">logo</div>
-                </div>
-
-                <div class="g6 s-g4 m-g3">
-                    <div class="brand">logo</div>
-                </div>
-                <div class="g6 s-g4 m-g3">
-                    <div class="brand">logo</div>
-                </div>
-                <div class="g6 s-g4 m-g3">
-                    <div class="brand">logo</div>
-                </div>
-                <div class="g6 s-g4 m-g3">
-                    <div class="brand">logo</div>
-                </div>
-            </div>
-
-        </section>
-
-
-
-
-
-
-        <section class="lets mp">
-            <div class="grid">
-                <div class="g8 m-g6">
-                    <p>Let’s<br> make it<br> all about<br> you</p>
-                    <div class="cta">Send us a message</div>
-                </div>
-                <div class="g4 m-g6">
-                    <div class="get_sh">
-                        <img class="get_sh_1" src="./logo.png" alt="ubranded get s*it done">
-                        <img class="get_sh_2" src="./logo.png" alt="ubranded get s*it done">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-
-        <footer class="footer">
-            <div class="grid">
-                <div class="g12">
-                    <div class="news">
-                        <div class="news_inner">
-                            Yes! We do good sh*t! Yes! We do good sh*t! Yes! We do good sh*t! Yes! We do good sh*t!
                         </div>
                     </div>
                 </div>
+
+
+    </section>
+
+
+
+
+
+    <section class="service mp">
+        <h2>Service</h2>
+        <div class="service">
+            <h3>Brand Strategy</h3>
+            <p>A plan for developing your brand based on discovering your potential.<br>
+            <ul>
+                <li>Research</li>
+                <li>Discovering the Brand Uniqueness</li>
+                <li>Discovering your Value Proposition</li>
+                <li>Brand Personality</li>
+                <li>Visual Identity (Logotype, Typography & Colour Palette)</li>
+                <li>Packaging Design</li>
+                <li>Graphic Design</li>
+                <li>Brand Guidelines</li>
+                <li>Photography & Video Production</li>
+            </ul>
+            </p>
+        </div>
+        <div class="service">
+            <h3>Websites</h3>
+            <p>
+                Our website design showcases your brand's uniqueness and engages your audience. We develop
+                custom solutions that are both easy to use and tailored to specific business requirements.
+            <ul>
+                <li>UI/UX Design</li>
+                <li>Sotware UI design</li>
+                <li>Web app design& development</li>
+                <li>Frontend & Backend Development</li>
+                <li>E-commerce</li>
+                <li>Inrteractive websites design & development</li>
+            </ul>
+            </p>
+        </div>
+        </div>
+
+        <div class="grid logici">
+            <div class="g6 s-g4 m-g3">
+                <div class="brand">logo</div>
             </div>
-            <div class="grid mp">
-                <div class="g12 m-g3">
-                    <div class="g12 xyz l-g5 link_1">
-                        <div class="animateIt linkit2 shown go4it"><strong>SERVICES</strong></div>
-                        <a class="links animateIt linkit2 shown go4it" href="services/strategy/">Strategy</a><br>
-                        <a class="links animateIt linkit2 shown go4it" href="services/ui-ux-design/">UI / UX
-                            design</a><br>
-                        <a class="links animateIt linkit2 shown go4it" href="services/product-development/">Product
-                            development</a><br>
-                        <a class="links animateIt linkit2 shown go4it" href="services/digital-marketing/">Digital
-                            marketing</a><br>
-                        <a class="links animateIt linkit2 shown go4it" href="services/brending/">Branding</a><br>
-                        <a class="links animateIt linkit2 shown go4it" href="services/consulting/">Consulting</a>
+            <div class="g6 s-g4 m-g3">
+                <div class="brand">logo</div>
+            </div>
+            <div class="g6 s-g4 m-g3">
+                <div class="brand">logo</div>
+            </div>
+            <div class="g6 s-g4 m-g3">
+                <div class="brand">logo</div>
+            </div>
+
+            <div class="g6 s-g4 m-g3">
+                <div class="brand">logo</div>
+            </div>
+            <div class="g6 s-g4 m-g3">
+                <div class="brand">logo</div>
+            </div>
+            <div class="g6 s-g4 m-g3">
+                <div class="brand">logo</div>
+            </div>
+            <div class="g6 s-g4 m-g3">
+                <div class="brand">logo</div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <section class="lets mp">
+        <div class="grid">
+            <div class="g8 m-g6">
+                <p>Let’s<br> make it<br> all about<br> you</p>
+                <div class="cta">Send us a message</div>
+            </div>
+            <div class="g4 m-g6">
+                <div class="get_sh">
+                    <img class="get_sh_1" src="./logo.png" alt="ubranded get s*it done">
+                    <img class="get_sh_2" src="./logo.png" alt="ubranded get s*it done">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="grid">
+            <div class="g12">
+                <div class="news">
+                    <div class="news_inner">
+                        Yes! We do good sh*t! Yes! We do good sh*t! Yes! We do good sh*t! Yes! We do good sh*t!
                     </div>
-
-                </div>
-                <div class="g12 m-g6">
-                    <div class="g12 xyz l-g5 link_2">
-                        <div class="animateIt linkit2 shown go4it"><strong>CONTACT</strong></div>
-                        <div class="mail footer-broj-us animateIt linkit2 shown go4it"><a ref="nofollow"
-                                href="s01yg3642@gmail.com"><E-mail>E-mail</E-mail></a></div>
-                        <div class="numb footer-broj animateIt linkit2 mb60 xyz l-mb20 shown go4it"><a ref="nofollow"
-                                href="tel:+8869314808">Telephant</a></div>
-
-
-                        <!-- Google Calendar Appointment Scheduling begin -->
-
-
-
-                        <!-- end Google Calendar Appointment Scheduling -->
-
-                        <a href="https://www.instagram.com/made.by.unbranded/" rel="noopener" target="_blank"
-                            class="insta animateIt linkit2 shown go4it"><svg class="instagram" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z">
-                                </path>
-                            </svg></a><br>
-                        <a href="https://www.linkedin.com/company/unbranded-ltd/" rel="noopener" target="_blank"
-                            class="linked animateIt linkit2"><svg class="linkedin" viewBox="0 0 24 24">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
-                                </path>
-                            </svg></a><br>
-                        <a href="https://www.behance.net/unbrandedhr" rel="noopener" target="_blank"
-                            class="linked animateIt linkit2"><svg class="linkedin" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" viewBox="0 0 24 24">
-                                <path
-                                    d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z">
-                                </path>
-                            </svg></a>
-                    </div>
-                </div>
-                <div class="g12 m-g3"></div>
-
-                <!-- new row-->
-                <div class="g12 p20"></div>
-
-                <div class="g12 m-g3">
-                    © 2021 unbranded<br>
-                    All rights reserved
-                </div>
-
-                <div class="g12 m-g3">
-                    <a href="https://madebyunbranded.com/privacy-policy/">Privacy</a> <span class="db xyz l-di"><span
-                            class="dn xyz l-di">/</span></span>
-                    <a href="https://madebyunbranded.com/cookies/">Cookies</a> <span class="db xyz l-di"><span
-                            class="dn xyz l-di">/</span></span>
-                    <a href="https://madebyunbranded.com/imprint/">Impressum</a>
-                    ++
                 </div>
             </div>
+        </div>
+        <div class="grid mp">
+            <div class="g12 m-g3">
+                <div class="g12 xyz l-g5 link_1">
+                    <div class="animateIt linkit2 shown go4it"><strong>SERVICES</strong></div>
+                    <a class="links animateIt linkit2 shown go4it" href="services/strategy/">Strategy</a><br>
+                    <a class="links animateIt linkit2 shown go4it" href="services/ui-ux-design/">UI / UX
+                        design</a><br>
+                    <a class="links animateIt linkit2 shown go4it" href="services/product-development/">Product
+                        development</a><br>
+                    <a class="links animateIt linkit2 shown go4it" href="services/digital-marketing/">Digital
+                        marketing</a><br>
+                    <a class="links animateIt linkit2 shown go4it" href="services/brending/">Branding</a><br>
+                    <a class="links animateIt linkit2 shown go4it" href="services/consulting/">Consulting</a>
+                </div>
+
             </div>
-        </footer>
-        <section class="login">
-            <div id="login">
-                <h1>Welcome Back!</h1>
-                <form action="/" method="post">
-                    <div class="field-wrap overflow-x">
-                        <label>
-                            Password<span class="req">*</span>
-                        </label>
-                        <input type="password" required autocomplete="off" />
-                    </div>
-                    <p class="forgot"><a href="#">Forgot Password?</a></p>
-                    <button class="button button-block">Log In</button>
-                </form>
+            <div class="g12 m-g6">
+                <div class="g12 xyz l-g5 link_2">
+                    <div class="animateIt linkit2 shown go4it"><strong>CONTACT</strong></div>
+                    <div class="mail footer-broj-us animateIt linkit2 shown go4it"><a ref="nofollow"
+                            href="s01yg3642@gmail.com"><E-mail>E-mail</E-mail></a></div>
+                    <div class="numb footer-broj animateIt linkit2 mb60 xyz l-mb20 shown go4it"><a ref="nofollow"
+                            href="tel:+8869314808">Telephant</a></div>
+
+
+                    <!-- Google Calendar Appointment Scheduling begin -->
+
+
+
+                    <!-- end Google Calendar Appointment Scheduling -->
+
+                    <a href="https://www.instagram.com/made.by.unbranded/" rel="noopener" target="_blank"
+                        class="insta animateIt linkit2 shown go4it"><svg class="instagram" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z">
+                            </path>
+                        </svg></a><br>
+                    <a href="https://www.linkedin.com/company/unbranded-ltd/" rel="noopener" target="_blank"
+                        class="linked animateIt linkit2"><svg class="linkedin" viewBox="0 0 24 24">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+                            </path>
+                        </svg></a><br>
+                    <a href="https://www.behance.net/unbrandedhr" rel="noopener" target="_blank"
+                        class="linked animateIt linkit2"><svg class="linkedin" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z">
+                            </path>
+                        </svg></a>
+                </div>
             </div>
-        </section> <!-- /form -->
+            <div class="g12 m-g3"></div>
 
+            <!-- new row-->
+            <div class="g12 p20"></div>
 
+            <div class="g12 m-g3">
+                © 2021 unbranded<br>
+                All rights reserved
+            </div>
 
-
-
-        <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
-        <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-        <script src="https://madebyunbranded.com/assets/lenis.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/textify.js@2.3.2/dist/Textify.min.js"></script>
-        <script src="js/products.json"></script>
-        <script src="https://kit.fontawesome.com/766b3aafc5.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-        <script src="js/code.js"></script>
-        <script src="js/login.js"></script>
-        <script src="js/search.js"></script>
+            <div class="g12 m-g3">
+                <a href="https://madebyunbranded.com/privacy-policy/">Privacy</a> <span class="db xyz l-di"><span
+                        class="dn xyz l-di">/</span></span>
+                <a href="https://madebyunbranded.com/cookies/">Cookies</a> <span class="db xyz l-di"><span
+                        class="dn xyz l-di">/</span></span>
+                <a href="https://madebyunbranded.com/imprint/">Impressum</a>
+                ++
+            </div>
+        </div>
+        </div>
+    </footer>
+    <section class="login">
+        <div id="login">
+            <h1>Welcome Back!</h1>
+            <form action="/" method="post">
+                <div class="field-wrap overflow-x">
+                    <label>
+                        Password<span class="req">*</span>
+                    </label>
+                    <input type="password" required autocomplete="off" />
+                </div>
+                <p class="forgot"><a href="#">Forgot Password?</a></p>
+                <button class="button button-block">Log In</button>
+            </form>
+        </div>
+    </section> <!-- /form -->
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://madebyunbranded.com/assets/lenis.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/textify.js@2.3.2/dist/Textify.min.js"></script>
+    <script src="js/products.json"></script>
+    <script src="https://kit.fontawesome.com/766b3aafc5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="js/code.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/search.js"></script>
 </body>
 
 </html>
