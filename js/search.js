@@ -104,12 +104,25 @@ class ProductTableApp {
         }
 
         // val: Number
-        if (val === 'price') {
+        if (val === 'id') {
             return [...products].sort((a, b) => {
                 if (a[val] < b[val]) {
                     return -1;
                 }
                 if (a[val] > b[val]) {
+                    return 1;
+                }
+                return 0;
+            });
+        }
+
+        // val: Number
+        if (val === 'market_value') {
+            return [...products].sort((a, b) => {
+                if (a[val] > b[val]) {
+                    return -1;
+                }
+                if (a[val] < b[val]) {
                     return 1;
                 }
                 return 0;
@@ -183,27 +196,27 @@ class ProductTableApp {
             return;
         }
 
-      this.$tbody.html(
-        products.map(
-          (product) =>
-            `<tr class="table-row" data-key="${product.id}">
-              <td class="table-cell align-right">${product.id}</td>
-              <td class="table-cell align-left">${product.brand}</td>
-              <td class="table-cell align-left">${product.name}</td>
-              <td class="table-cell align-left">${product.category}</td>
-              <td class="table-cell align-right">&yen; ${product.price}</td>
-              <td class="table-cell align-left">${
-                product.stocked
-                  ? `<i class="fas fa-check-circle light-text"></i>${twoSpace}In stock`
-                  : `<i class="fas fa-minus-circle light-text"></i>${twoSpace}Out of stock`
-              }</td>
-              <td class="table-cell align-left">${product.created_at}</td>
-              <td class="table-cell align-left">${product.updated_at}</td>
+        this.$tbody.html(
+            products.map(
+                (product) =>
+                    `<tr class="table-row" data-key="${product.id}">
+            <td class="table-cell align-right">${product.id}</td>
+            <td class="table-cell align-left">${product.name}</td>
+            <td class="table-cell align-left">${product.brand}</td>
+            <td class="table-cell align-left">${product.category}</td>
+            <td class="table-cell align-right">${product.share_capital}</td>
+            <td class="table-cell align-right">${product.market_value}</td>
+            <td class="table-cell align-left">${product.industry}</td>
+            <td class="table-cell align-left">${product.description}</td>
+            <td class="table-cell align-left">${product.updated_at}</td>
             </tr>`,
-        ),
-      );
-
-            products.length === 0
+            ),
+        );
+// <td class="table-cell align-left">${product.stocked
+// ? `<i class="fas fa-check-circle light-text"></i>${twoSpace}In stock`
+// : `<i class="fas fa-minus-circle light-text"></i>${twoSpace}Out of stock`
+// }</td>
+        products.length === 0
             ? this.$noResults.removeClass('hidden')
             : this.$noResults.addClass('hidden');
     }
