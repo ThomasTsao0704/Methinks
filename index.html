@@ -67,237 +67,241 @@
         <!-- TradingView Widget END -->
     </section>
     <main>
-    <div style="height: 600px"><!-- TradingView Widget BEGIN -->
-        <div class="tradingview-widget-container">
-            <script type="text/javascript"
-                src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
-                    {
-                        "isTransparent": false,
-                            "largeChartUrl": "",
-                                "displayMode": "compact",
-                                    "width": "100%",
-                                        "height": "100%",
-                                            "colorTheme": "light",
-                                                "symbol": "TWSE:2330",
-                                                    "locale": "zh_TW"
-                    }</script>
-        </div><!-- TradingView Widget END -->
-    </div>
-
-            <div class="container">
-                <h3>股票查詢</h3>
-                <h1 class="heading-lv1">Products</h1>
-                <div class="table-app" id="product-table-app">
-                    <div class="table-handler">
-                        <div class="table-handler-dropdown-cell">
-                            <div class="dropdown">
-                                <h3 class="dropdown-heading">
-                                    <i class="fas fa-filter"></i> Brand
-                                </h3>
-                                <select class="select js-handle-table js-filter" id="filter-brand">
-                                    <option value="all">All</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="table-handler-dropdown-cell">
-                            <div class="dropdown">
-                                <h3 class="dropdown-heading">
-                                    <i class="fas fa-filter"></i> Category
-                                </h3>
-                                <select class="select js-handle-table js-filter" id="filter-category">
-                                    <option value="all">All</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="table-handler-dropdown-cell">
-                            <div class="dropdown">
-                                <h3 class="dropdown-heading">
-                                    <i class="fas fa-sort-amount-up-alt"></i> Sort by
-                                </h3>
-                                <select class="select js-handle-table" id="sort-by">
-                                    <option value="none">-</option>
-                                    <option value="price">Price</option>
-                                    <option value="created_at">Created at</option>
-                                    <option value="updated_at">Updated at</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="table-handler-dropdown-cell">
-                            <!-- TODO: add label and create style -->
-                            <input type="checkbox" class="js-handle-table" id="toggle" value="hiding-out-of-stock" />
-                            <label for="toggle">Hiding out-of-stock products</label>
-                        </div>
-                    </div>
-                    <!-- /.table-handler -->
-                    <div class="table-wrapper">
-                        <table class="table" id="table">
-                            <thead>
-                                <tr class="table-head">
-                                    <th class="table-cell align-right">ID</th>
-                                    <th class="table-cell align-left">Brand</th>
-                                    <th class="table-cell align-left">Name</th>
-                                    <th class="table-cell align-left">Category</th>
-                                    <th class="table-cell align-right">Price</th>
-                                    <th class="table-cell align-left">Status</th>
-                                    <th class="table-cell align-left">Created at</th>
-                                    <th class="table-cell align-left">Updated at</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Loop -->
-                            </tbody>
-                        </table>
-                        <div class="no-results hidden" id="no-results">
-                            <p class="no-results-message">No results found.</p>
-                        </div>
-                        <!-- /#no-results -->
-                    </div>
-                    <!-- /.table-wrapper -->
-                </div>
-                <!-- /.table-app -->
-            </div>
-        </div>
-
-    <section class="radovi mp">
-        <h2>Information</h2>
-
-        <div class="hori grid">
+        <section style="height:650px;width:800px">
             <!-- TradingView Widget BEGIN -->
-            <div class="rad">
-                <div id="rad1"></div>
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget" style="height:calc(100% - 800px);width:100%"></div>
+                <div class="tradingview-widget-copyright"></div>
                 <script type="text/javascript"
-                    src="https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js" async>
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
                         {
-                            "colorTheme": "light",
-                                "dateRange": "12M",
-                                    "exchange": "TPEX",
-                                        "showChart": true,
-                                            "locale": "zh_TW",
-                                                "largeChartUrl": "",
-                                                    "isTransparent": false,
-                                                        "showSymbolLogo": false,
-                                                            "showFloatingTooltip": false,
-                                                                "width": "400",
-                                                                    "height": "550",
-                                                                        "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
-                                                                            "plotLineColorFalling": "rgba(41, 98, 255, 1)",
-                                                                                "gridLineColor": "rgba(240, 243, 250, 0)",
-                                                                                    "scaleFontColor": "rgba(19, 23, 34, 1)",
-                                                                                        "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
-                                                                                            "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
-                                                                                                "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
-                                                                                                    "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
-                                                                                                        "symbolActiveColor": "rgba(41, 98, 255, 0.12)"
+                            "autosize": true,
+                                "symbol": "NASDAQ:AAPL",
+                                    "timezone": "Asia/Taipei",
+                                        "theme": "dark",
+                                            "style": "1",
+                                                "locale": "zh_TW",
+                                                    "withdateranges": true,
+                                                        "range": "YTD",
+                                                            "hide_side_toolbar": false,
+                                                                "allow_symbol_change": true,
+                                                                    "details": true,
+                                                                        "hotlist": true,
+                                                                            "calendar": false,
+                                                                                "studies": [
+                                                                                    "STD;Accumulation_Distribution",
+                                                                                    "STD;MA%Ribbon"
+                                                                                ],
+                                                                                    "show_popup_button": true,
+                                                                                        "popup_width": "800px",
+                                                                                            "popup_height": "600px",
+                                                                                                "support_host": "https://www.tradingview.com"
                         }
                     </script>
-                <div class="title">Poliklinic Fem Point</div>
-                <div class="about">Holistic care for your health</div>
-                <div class="pills">
-                    <div class="pill"><a
-                            href="https://www.notion.so/Content-Writing-Dashboard-01d2893a66d349bab63fe146b8fc2765rame">Website</a>
-                    </div>
-                </div>
+                    <script src="js/Time_Chart.js"></script>
             </div>
             <!-- TradingView Widget END -->
-
-
-
-
-
-            <div class="rad">
-                <div class="img" id="rad2"></div>
-                <div class="title">Poliklinic Fem Point</div>
-                <div class="about">Holistic care for your health</div>
-                <div class="pills">
-                    <div class="pill">Website</div>
-                </div>
-            </div>
-
-
-
-            <div class="rad">
-                <div class="img" id="rad3"></div>
-                <div class="title">Poliklinic Fem Point</div>
-                <div class="about">Holistic care for your health</div>
-                <div class="pills">
-                    <div class="pill">Website</div>
-                </div>
-            </div>
-
-
-
-            <div class="rad">
-                <div class="img" id="rad4"></div>
-                <div class="title">Poliklinic Fem Point</div>
-                <div class="about">Holistic care for your health</div>
-                <div class="pills">
-                    <div class="pill">Website</div>
-                </div>
-            </div>
-
-
-        </div>
-        <!--horizontal scroll-->
-
-    </section>
-
-    <section class="all_projects mp">
-
-        <div class="all_projects_ball">
-            ALL PROJECTS
-        </div>
-
-
-    </section>
-    <div>
-        <iframe
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRSD_68foVx4UqBZQo0rwx9v9MKDWcwV86F35WN4QKzmzohmIXghKOiWxCu0mzB1ENokC4fCzgwNzZ/pubhtml?gid=1869559944&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-    </div>
-    <A
-        href="https://docs.google.com/spreadsheets/d/1bzDKMAdViclpGFKCGz0IPpHZATRb18cQpeckYxr1r0o/edit?usp=sharing">點我</A>
-    <section class="reviews mp">
-
-        <div class="grid">
-            <div class="g12 m-g3 grid">
-                <div class="g4 m-g12 review_btn active">solidian & kelteks</div>
-                <div class="g4 m-g12 review_btn">Veek IT Consulting</div>
-                <div class="g4 m-g12 review_btn">Pixeltale</div>
-            </div>
-            <div class="g12 m-g9">
-                <div class="review" id="review1">
-                    Great website creators! They made our website and we are very happy. Professional communication
-                    and good teamwork and cooperation with us. I can recommend 100%!
-                    <div class="signature">
-                        Lars Breuer
-                        <small>General director of Kelteks d.o.o.</small>
+        </section>
+        <!-- Seach -->
+        <div class="container">
+            <h3>股票查詢</h3>
+            <h1 class="heading-lv1">Products</h1>
+            <div class="table-app" id="product-table-app">
+                <div class="table-handler">
+                    <div class="table-handler-dropdown-cell">
+                        <div class="dropdown">
+                            <h3 class="dropdown-heading">
+                                <i class="fas fa-filter"></i> 市場類別
+                            </h3>
+                            <select class="select js-handle-table js-filter" id="filter-brand">
+                                <option value="all">All</option>
+                            </select>
+                        </div>
                     </div>
+                    <div class="table-handler-dropdown-cell">
+                        <div class="dropdown">
+                            <h3 class="dropdown-heading">
+                                <i class="fas fa-filter"></i> 族群分類
+                            </h3>
+                            <select class="select js-handle-table js-filter" id="filter-category">
+                                <option value="all">All</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="table-handler-dropdown-cell">
+                        <div class="dropdown">
+                            <h3 class="dropdown-heading">
+                                <i class="fas fa-sort-amount-up-alt"></i> Sort by
+                            </h3>
+                            <select class="select js-handle-table" id="sort-by">
+                                <option value="none">-</option>
+                                <option value="id">ID</option>
+                                <option value="market_value">市值</option>
+                                <option value="updated_at">Updated at</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="table-handler-dropdown-cell">
+                    -->
+                        <!-- TODO: add label and create style -->
+                    <!--
+                        <input type="checkbox" class="js-handle-table" id="toggle" value="hiding-out-of-stock" />
+                        <label for="toggle">Hiding out-of-stock products</label>
+                    </div>
+                    -->    
+                </div>
+                <!-- /.table-handler -->
+                <div class="table-wrapper">
+                    <table class="table" id="table">
+                        <thead>
+                            <tr class="table-head">
+                                <th class="table-cell align-right">ID</th>
+                                <th class="table-cell align-left">Name</th>
+                                <th class="table-cell align-left">市場別</th>
+                                <th class="table-cell align-left">族群分類</th>
+                                <th class="table-cell align-right">股本</th>
+                                <th class="table-cell align-right">市值</th>
+                                <!-- <th class="table-cell align-left">Status</th> -->
+                                <th class="table-cell align-left">產業地位</th> <!-- Created at -->
+                                <th class="table-cell align-left">業務細項</th> <!-- Updated at -->
+                                <th class="table-cell align-left">上市日期</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Loop -->
+                        </tbody>
+                    </table>
+                    <div class="no-results hidden" id="no-results">
+                        <p class="no-results-message">No results found.</p>
+                    </div>
+                    <!-- /#no-results -->
+                </div>
+                <!-- /.table-wrapper -->
+            </div>
+            <!-- /.table-app -->
+        </div>
+        <section style="height: 680px;width:90%"><!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <script type="text/javascript"
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
+                        {
+                            "isTransparent": false,
+                                "largeChartUrl": "",
+                                    "displayMode": "compact",
+                                        "width": "100%",
+                                            "height": "100%",
+                                                "colorTheme": "light",
+                                                    "symbol": "TWSE:2330",
+                                                        "locale": "zh_TW"
+                        }</script>
+            </div><!-- TradingView Widget END -->
+        </section>
+        <section class="radovi mp">
+            <h2>Information</h2>
+            <div>
+            <!--<div class="hori grid">-->
+                <!-- TradingView Widget BEGIN -->
+                <div class="rad" style="display: inline-block;">
+                    <div id="rad1"></div>
+                    <script type="text/javascript"
+                        src="https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js" async>
+                            {
+                                "colorTheme": "light",
+                                    "dateRange": "12M",
+                                        "exchange": "TPEX",
+                                            "showChart": true,
+                                                "locale": "zh_TW",
+                                                    "largeChartUrl": "",
+                                                        "isTransparent": false,
+                                                            "showSymbolLogo": false,
+                                                                "showFloatingTooltip": false,
+                                                                    "width": "400",
+                                                                        "height": "550",
+                                                                            "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+                                                                                "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+                                                                                    "gridLineColor": "rgba(240, 243, 250, 0)",
+                                                                                        "scaleFontColor": "rgba(19, 23, 34, 1)",
+                                                                                            "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+                                                                                                "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+                                                                                                    "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+                                                                                                        "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+                                                                                                            "symbolActiveColor": "rgba(41, 98, 255, 0.12)"
+                            }
+                        </script>
+                    <div class="title">Poliklinic Fem Point</div>
+                    <div class="about">Holistic care for your health</div>
+                    <div class="pills">
+                        <div class="pill"><a
+                                href="https://www.notion.so/Content-Writing-Dashboard-01d2893a66d349bab63fe146b8fc2765rame">Website</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- TradingView Widget END -->
+                <div class="rad" style="display: inline-block;">
+                    <div class="img" id="rad2"></div>
+                    <div class="title">Poliklinic Fem Point</div>
+                    <div class="about">Holistic care for your health</div>
+                    <div class="pills">
+                        <div class="pill">Website</div>
+                    </div>
+                </div>
+                <div class="rad" style="display: inline-block;">
+                    <div class="img" id="rad3"></div>
+                    <div class="title">Poliklinic Fem Point</div>
+                    <div class="about">Holistic care for your health</div>
+                    <div class="pills">
+                        <div class="pill">Website</div>
+                    </div>
+                </div>
+            </div>
+            <!--</div>-->
+            <!--horizontal scroll-->
 
-                    <div class="review" id="review2">
-                        Great website creators! They made our website and we are very happy. Professional
-                        communication and good teamwork and cooperation with us. I can recommend 100%!
+        </section>
+
+        <section class="all_projects mp">
+
+            <div class="all_projects_ball">
+                ALL PROJECTS
+            </div>
+        </section>
+        <section class="reviews mp">
+            <div class="grid">
+                <div class="g12 m-g3 grid">
+                    <div class="g4 m-g12 review_btn active">solidian & kelteks</div>
+                    <div class="g4 m-g12 review_btn">Veek IT Consulting</div>
+                    <div class="g4 m-g12 review_btn">Pixeltale</div>
+                </div>
+                <div class="g12 m-g9">
+                    <div class="review" id="review1">
+                        Great website creators! They made our website and we are very happy. Professional communication
+                        and good teamwork and cooperation with us. I can recommend 100%!
                         <div class="signature">
                             Lars Breuer
                             <small>General director of Kelteks d.o.o.</small>
                         </div>
 
-                        <div class="review" id="review3">
+                        <div class="review" id="review2">
                             Great website creators! They made our website and we are very happy. Professional
                             communication and good teamwork and cooperation with us. I can recommend 100%!
                             <div class="signature">
                                 Lars Breuer
                                 <small>General director of Kelteks d.o.o.</small>
                             </div>
+
+                            <div class="review" id="review3">
+                                Great website creators! They made our website and we are very happy. Professional
+                                communication and good teamwork and cooperation with us. I can recommend 100%!
+                                <div class="signature">
+                                    Lars Breuer
+                                    <small>General director of Kelteks d.o.o.</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-
-    </section>
-</main>
-
-
-
-
+        </section>
+    </main>
     <section class="service mp">
         <h2>Service</h2>
         <div class="service">
@@ -360,34 +364,20 @@
                 <div class="brand">logo</div>
             </div>
         </div>
-
     </section>
-
-
-
-
-
-
     <section class="lets mp">
         <div class="grid">
             <div class="g8 m-g6">
                 <p>Let’s<br> make it<br> all about<br> you</p>
-                <div class="cta">Send us a message</div>
             </div>
             <div class="g4 m-g6">
                 <div class="get_sh">
-                    <img class="get_sh_1" src="./logo.png" alt="ubranded get s*it done">
-                    <img class="get_sh_2" src="./logo.png" alt="ubranded get s*it done">
+                    <img class="get_sh_1" src="" alt="">
+                    <img class="get_sh_2" src="" alt="">
                 </div>
             </div>
         </div>
     </section>
-
-
-
-
-
-
     <footer class="footer">
         <div class="grid">
             <div class="g12">
