@@ -745,9 +745,9 @@ header {
     margin: 0 auto;
 }
 
-.table-app {
-    min-width: 700px;
-}
+//.table-app {
+//    min-width: 700px;
+//}
 
 .table-handler {
     margin-bottom: 16px;
