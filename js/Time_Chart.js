@@ -30,7 +30,7 @@ function TradingViewWidget() {
             "STD;MA%Ribbon"
         ],
         "show_popup_button": true,
-        "popup_width": "1000",
+        "popup_width": "1200",
         "popup_height": "650",
         "support_host": "https://www.tradingview.com"
         }`;
