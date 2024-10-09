@@ -67,121 +67,93 @@
         <!-- TradingView Widget END -->
     </section>
     <main>
-        <section style="height:650px;width:800px">
-            <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget" style="height:calc(100% - 800px);width:100%"></div>
-                <div class="tradingview-widget-copyright"></div>
-                <script type="text/javascript"
-                    src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-                        {
-                            "autosize": true,
-                                "symbol": "NASDAQ:AAPL",
-                                    "timezone": "Asia/Taipei",
-                                        "theme": "dark",
-                                            "style": "1",
-                                                "locale": "zh_TW",
-                                                    "withdateranges": true,
-                                                        "range": "YTD",
-                                                            "hide_side_toolbar": false,
-                                                                "allow_symbol_change": true,
-                                                                    "details": true,
-                                                                        "hotlist": true,
-                                                                            "calendar": false,
-                                                                                "studies": [
-                                                                                    "STD;Accumulation_Distribution",
-                                                                                    "STD;MA%Ribbon"
-                                                                                ],
-                                                                                    "show_popup_button": true,
-                                                                                        "popup_width": "800px",
-                                                                                            "popup_height": "600px",
-                                                                                                "support_host": "https://www.tradingview.com"
-                        }
-                    </script>
-                    <script src="js/Time_Chart.js"></script>
+        <section>
+            <div style="margin: 50px;">
+            <iframe
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRSD_68foVx4UqBZQo0rwx9v9MKDWcwV86F35WN4QKzmzohmIXghKOiWxCu0mzB1ENokC4fCzgwNzZ/pubhtml?widget=true&amp;headers=false" style="height:80vh;width:70%"></iframe>
+            <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRSD_68foVx4UqBZQo0rwx9v9MKDWcwV86F35WN4QKzmzohmIXghKOiWxCu0mzB1ENokC4fCzgwNzZ/pubhtml">網址連結</a>
             </div>
-            <!-- TradingView Widget END -->
-        </section>
+            </section>
         <!-- Seach -->
         <div>
-        <div class="container">
-            <h3>股票查詢</h3>
-            <h1 class="heading-lv1">Products</h1>
-            <div class="table-app" id="product-table-app">
-                <div class="table-handler">
-                    <div class="table-handler-dropdown-cell">
-                        <div class="dropdown">
-                            <h3 class="dropdown-heading">
-                                <i class="fas fa-filter"></i> 市場類別
-                            </h3>
-                            <select class="select js-handle-table js-filter" id="filter-brand">
-                                <option value="all">All</option>
-                            </select>
+            <div class="container">
+                <h3>股票查詢</h3>
+                <h1 class="heading-lv1">Products</h1>
+                <div class="table-app" id="product-table-app">
+                    <div class="table-handler">
+                        <div class="table-handler-dropdown-cell">
+                            <div class="dropdown">
+                                <h3 class="dropdown-heading">
+                                    <i class="fas fa-filter"></i> 市場類別
+                                </h3>
+                                <select class="select js-handle-table js-filter" id="filter-brand">
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="table-handler-dropdown-cell">
-                        <div class="dropdown">
-                            <h3 class="dropdown-heading">
-                                <i class="fas fa-filter"></i> 族群分類
-                            </h3>
-                            <select class="select js-handle-table js-filter" id="filter-category">
-                                <option value="all">All</option>
-                            </select>
+                        <div class="table-handler-dropdown-cell">
+                            <div class="dropdown">
+                                <h3 class="dropdown-heading">
+                                    <i class="fas fa-filter"></i> 族群分類
+                                </h3>
+                                <select class="select js-handle-table js-filter" id="filter-category">
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="table-handler-dropdown-cell">
-                        <div class="dropdown">
-                            <h3 class="dropdown-heading">
-                                <i class="fas fa-sort-amount-up-alt"></i> Sort by
-                            </h3>
-                            <select class="select js-handle-table" id="sort-by">
-                                <option value="none">-</option>
-                                <option value="id">ID</option>
-                                <option value="market_value">市值</option>
-                                <option value="updated_at">Updated at</option>
-                            </select>
+                        <div class="table-handler-dropdown-cell">
+                            <div class="dropdown">
+                                <h3 class="dropdown-heading">
+                                    <i class="fas fa-sort-amount-up-alt"></i> Sort by
+                                </h3>
+                                <select class="select js-handle-table" id="sort-by">
+                                    <option value="none">-</option>
+                                    <option value="id">ID</option>
+                                    <option value="market_value">市值</option>
+                                    <option value="updated_at">Updated at</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <!--
+                        <!--
                     <div class="table-handler-dropdown-cell">
                     -->
                         <!-- TODO: add label and create style -->
-                    <!--
+                        <!--
                         <input type="checkbox" class="js-handle-table" id="toggle" value="hiding-out-of-stock" />
                         <label for="toggle">Hiding out-of-stock products</label>
                     </div>
-                    -->    
-                </div>
-                <!-- /.table-handler -->
-                <div class="table-wrapper">
-                    <table class="table" id="table">
-                        <thead>
-                            <tr class="table-head">
-                                <th class="table-cell align-right">ID</th>
-                                <th class="table-cell align-left">Name</th>
-                                <th class="table-cell align-left">市場別</th>
-                                <th class="table-cell align-left">族群分類</th>
-                                <th class="table-cell align-right">股本</th>
-                                <th class="table-cell align-right">市值</th>
-                                <!-- <th class="table-cell align-left">Status</th> -->
-                                <th class="table-cell align-left">產業地位</th> <!-- Created at -->
-                                <th class="table-cell align-left">業務細項</th> <!-- Updated at -->
-                                <th class="table-cell align-left">上市日期</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Loop -->
-                        </tbody>
-                    </table>
-                    <div class="no-results hidden" id="no-results">
-                        <p class="no-results-message">No results found.</p>
+                    -->
                     </div>
-                    <!-- /#no-results -->
+                    <!-- /.table-handler -->
+                    <div class="table-wrapper">
+                        <table class="table" id="table">
+                            <thead>
+                                <tr class="table-head">
+                                    <th class="table-cell align-right">ID</th>
+                                    <th class="table-cell align-left">Name</th>
+                                    <th class="table-cell align-left">市場別</th>
+                                    <th class="table-cell align-left">族群分類</th>
+                                    <th class="table-cell align-right">股本</th>
+                                    <th class="table-cell align-right">市值</th>
+                                    <!-- <th class="table-cell align-left">Status</th> -->
+                                    <th class="table-cell align-left">產業地位</th> <!-- Created at -->
+                                    <th class="table-cell align-left">業務細項</th> <!-- Updated at -->
+                                    <th class="table-cell align-left">上市日期</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Loop -->
+                            </tbody>
+                        </table>
+                        <div class="no-results hidden" id="no-results">
+                            <p class="no-results-message">No results found.</p>
+                        </div>
+                        <!-- /#no-results -->
+                    </div>
+                    <!-- /.table-wrapper -->
                 </div>
-                <!-- /.table-wrapper -->
+                <!-- /.table-app -->
             </div>
-            <!-- /.table-app -->
-        </div>
         </div>
         <section style="height: 680px;width:90%"><!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container">
@@ -202,7 +174,7 @@
         <section class="radovi mp">
             <h2>Information</h2>
             <div>
-            <!--<div class="hori grid">-->
+                <!--<div class="hori grid">-->
                 <!-- TradingView Widget BEGIN -->
                 <div class="rad" style="display: inline-block;">
                     <div id="rad1"></div>
@@ -259,11 +231,9 @@
             </div>
             <!--</div>-->
             <!--horizontal scroll-->
-
         </section>
 
         <section class="all_projects mp">
-
             <div class="all_projects_ball">
                 ALL PROJECTS
             </div>
@@ -283,7 +253,6 @@
                             Lars Breuer
                             <small>General director of Kelteks d.o.o.</small>
                         </div>
-
                         <div class="review" id="review2">
                             Great website creators! They made our website and we are very happy. Professional
                             communication and good teamwork and cooperation with us. I can recommend 100%!
@@ -291,7 +260,6 @@
                                 Lars Breuer
                                 <small>General director of Kelteks d.o.o.</small>
                             </div>
-
                             <div class="review" id="review3">
                                 Great website creators! They made our website and we are very happy. Professional
                                 communication and good teamwork and cooperation with us. I can recommend 100%!
@@ -338,7 +306,6 @@
             </p>
         </div>
         </div>
-
         <div class="grid logici">
             <div class="g6 s-g4 m-g3">
                 <div class="brand">logo</div>
@@ -404,7 +371,6 @@
                     <a class="links animateIt linkit2 shown go4it" href="services/brending/">Branding</a><br>
                     <a class="links animateIt linkit2 shown go4it" href="services/consulting/">Consulting</a>
                 </div>
-
             </div>
             <div class="g12 m-g6">
                 <div class="g12 xyz l-g5 link_2">
@@ -413,14 +379,11 @@
                             href="s01yg3642@gmail.com"><E-mail>E-mail</E-mail></a></div>
                     <div class="numb footer-broj animateIt linkit2 mb60 xyz l-mb20 shown go4it"><a ref="nofollow"
                             href="tel:+8869314808">Telephant</a></div>
-
-
                     <!-- Google Calendar Appointment Scheduling begin -->
 
 
 
                     <!-- end Google Calendar Appointment Scheduling -->
-
                     <a href="https://www.instagram.com/made.by.unbranded/" rel="noopener" target="_blank"
                         class="insta animateIt linkit2 shown go4it"><svg class="instagram" viewBox="0 0 24 24">
                             <path
@@ -443,15 +406,12 @@
                 </div>
             </div>
             <div class="g12 m-g3"></div>
-
             <!-- new row-->
             <div class="g12 p20"></div>
-
             <div class="g12 m-g3">
                 © 2021 unbranded<br>
                 All rights reserved
             </div>
-
             <div class="g12 m-g3">
                 <a href="https://madebyunbranded.com/privacy-policy/">Privacy</a> <span class="db xyz l-di"><span
                         class="dn xyz l-di">/</span></span>
