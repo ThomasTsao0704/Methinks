@@ -204,11 +204,8 @@ class ProductTableApp {
             <td class="table-cell align-left">${product.name}</td>
             <td class="table-cell align-left">${product.brand}</td>
             <td class="table-cell align-left">${product.category}</td>
-            <td class="table-cell align-right">${product.share_capital}</td>
-            <td class="table-cell align-right">${product.market_value}</td>
             <td class="table-cell align-left">${product.industry}</td>
-            <td class="table-cell align-left">${product.description}</td>
-            <td class="table-cell align-left">${product.updated_at}</td>
+            <td class=" align-left">${product.description}</td>
             </tr>`,
             ),
         );
@@ -216,6 +213,7 @@ class ProductTableApp {
 // ? `<i class="fas fa-check-circle light-text"></i>${twoSpace}In stock`
 // : `<i class="fas fa-minus-circle light-text"></i>${twoSpace}Out of stock`
 // }</td>
+// <td class="table-cell align-left">${product.updated_at}</td>
         products.length === 0
             ? this.$noResults.removeClass('hidden')
             : this.$noResults.addClass('hidden');
