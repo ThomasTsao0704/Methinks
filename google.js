@@ -54,7 +54,7 @@ var password = document.GetElementById("password");
 
 function verify() {
     if (document.myForm.userName.value == "admin" && document.myForm.password.value == "0704") {
-        window.location.pathname = "./stock-main/stock.html";
+        window.location.pathname = "stock/stock-main/stock.html";
         return false;
     }
     else if (document.myForm.userName.value == "" && document.myForm.password.value == "" || document.myForm.userName.value == null && document.myForm.password.value == null) {
