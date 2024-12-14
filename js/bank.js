@@ -151,7 +151,7 @@ function createChart(selected_location, selected_location2) {
         yAxis: {
             allowDecimals: false,
             min: 0,
-            max: 3000000,
+            max: 30000000,
             title: {
                 text: "Share of Households (Percent)",
                 offset: -140,
