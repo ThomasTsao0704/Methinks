@@ -24,9 +24,9 @@ $(document).ready(function () {
 
         createSearchBox(ref_data, 'test');
         createSearchBox(ref_data, 'test2', 'Select comparison metro...');
-        createChart('本國銀行');
+        createChart('009 彰化商業銀行');
 
-        $('#search_test').val('本國銀行');
+        $('#search_test').val('009 彰化商業銀行');
 
     }); //end get
 
