@@ -70,11 +70,10 @@ section.hero h1 {
     font-style: italic;
 }
 #login {
-    line-height: 1;
-    font-size: 30px;
-    font-weight: 400;
-    padding-top: 30px;
-    color: #DCCAF9
+    line-height:1;
+    font-size: 100px;
+    font-weight: 700;
+    padding-bottom: 60px;
 }
 
 
