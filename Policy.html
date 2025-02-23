@@ -62,5 +62,10 @@
         // 每 5 分鐘（300000 毫秒）更新一次
         setInterval(fetchAnnouncements, 300000); 
     </script>
+    <script>
+        const data = await response.json();
+        console.log("API 返回的數據:", data); // 在控制台查看 API 返回的數據結構
+    </script>
+    
 </body>
 </html>
