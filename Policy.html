@@ -15,16 +15,52 @@
     <h1>TPEx 最新股票公告</h1>
     <div id="announcements">載入中...</div>
 
-    <Script>
-    
-    const proxy = "https://cors-anywhere.herokuapp.com/";
-const apiUrl = "https://api.tej.com.tw/api/datatables/TRAIL/TAGIN.json?api_key=8AhEoHLcKiBmDuIneFaBZf310SAw83";
+    <script>
+        const proxy = "https://api.allorigins.win/get?url=";
+        const apiUrl = encodeURIComponent("https://api.tej.com.tw/api/datatables/TRAIL/TAGIN.json?api_key=8AhEoHLcKiBmDuIneFaBZf310SAw83");
 
-fetch(proxy + apiUrl)
-    .then(response => response.json())
-    .then(data => console.log("數據:", data))
-    .catch(error => console.error("錯誤:", error));
-    </Script>
+        async function fetchAnnouncements() {
+            try {
+                const response = await fetch(proxy + apiUrl);
     
+                if (!response.ok) {
+                    throw new Error(`HTTP 錯誤！狀態碼: ${response.status}`);
+                }
+    
+                const data = await response.json();
+    
+                // CORS Proxy 返回的結果會被包裹在 "contents" 屬性內
+                const jsonData = JSON.parse(data.contents);
+
+                if (!Array.isArray(jsonData)) {
+                    throw new Error("API 返回的格式錯誤");
+                }
+
+                const container = document.getElementById("announcements");
+                container.innerHTML = ""; 
+
+                jsonData.forEach(item => {
+                    const announcement = document.createElement("div");
+                    announcement.classList.add("announcement");
+    
+                    announcement.innerHTML = `
+                        <div class="title">${item.Title}</div>
+                        <div class="time">${item.systime}</div>
+                        <p>${item.Highlight}</p>
+                    `;
+    
+                    container.appendChild(announcement);
+                });
+    
+            } catch (error) {
+                console.error("錯誤:", error);
+                document.getElementById("announcements").innerText = "載入公告失敗，錯誤: " + error.message;
+            }
+        }
+
+        fetchAnnouncements();
+        // 每 5 分鐘（300000 毫秒）更新一次
+        setInterval(fetchAnnouncements, 300000); 
+    </script>
 </body>
 </html>
