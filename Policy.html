@@ -20,43 +20,45 @@
         const apiUrl = encodeURIComponent("https://api.tej.com.tw/api/datatables/TRAIL/TAGIN.json?api_key=8AhEoHLcKiBmDuIneFaBZf310SAw83");
 
         async function fetchAnnouncements() {
-            try {
-                const response = await fetch(proxy + apiUrl);
-    
-                if (!response.ok) {
-                    throw new Error(`HTTP 錯誤！狀態碼: ${response.status}`);
-                }
-    
-                const data = await response.json();
-    
-                // CORS Proxy 返回的結果會被包裹在 "contents" 屬性內
-                const jsonData = JSON.parse(data.contents);
+    try {
+        const response = await fetch(proxy + apiUrl);
 
-                if (!Array.isArray(jsonData)) {
-                    throw new Error("API 返回的格式錯誤");
-                }
-
-                const container = document.getElementById("announcements");
-                container.innerHTML = ""; 
-
-                jsonData.forEach(item => {
-                    const announcement = document.createElement("div");
-                    announcement.classList.add("announcement");
-    
-                    announcement.innerHTML = `
-                        <div class="title">${item.Title}</div>
-                        <div class="time">${item.systime}</div>
-                        <p>${item.Highlight}</p>
-                    `;
-    
-                    container.appendChild(announcement);
-                });
-    
-            } catch (error) {
-                console.error("錯誤:", error);
-                document.getElementById("announcements").innerText = "載入公告失敗，錯誤: " + error.message;
-            }
+        if (!response.ok) {
+            throw new Error(`HTTP 錯誤！狀態碼: ${response.status}`);
         }
+
+        const data = await response.json();
+        console.log("API 返回的數據:", data); // 打印原始數據
+
+        // 如果使用了 CORS Proxy，返回的數據會包裹在 contents 中
+        const jsonData = JSON.parse(data.contents); // 如果是從 CORS Proxy 來的數據
+        console.log("解析後的數據:", jsonData); // 打印解析後的數據結構
+
+        if (!Array.isArray(jsonData)) {
+            throw new Error("API 返回的格式錯誤，數據應為陣列");
+        }
+
+        const container = document.getElementById("announcements");
+        container.innerHTML = "";
+
+        jsonData.forEach(item => {
+            const announcement = document.createElement("div");
+            announcement.classList.add("announcement");
+
+            announcement.innerHTML = `
+                <div class="title">${item.Title}</div>
+                <div class="time">${item.systime}</div>
+                <p>${item.Highlight}</p>
+            `;
+
+            container.appendChild(announcement);
+        });
+
+    } catch (error) {
+        console.error("錯誤:", error);
+        document.getElementById("announcements").innerText = "載入公告失敗，錯誤: " + error.message;
+    }
+}
 
         fetchAnnouncements();
         // 每 5 分鐘（300000 毫秒）更新一次
