@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人品牌網站</title>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400;300' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background-color: white;
+            color: #4d4d4d;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+        }
+
+        header {
+            width: 100%;
+            background-color: #212a31;
+            position: fixed;
+            text-align: right;
+            line-height: 50px;
+        }
+
+        header a {
+            display: inline-block;
+            width: 130px;
+            cursor: pointer;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        header a:last-child {
+            background-color: #181f25;
+            margin: 0 30px 0 0;
+        }
+
+        header a:hover {
+            background-color: #0c1012;
+        }
+
+        aside {
+            width: 17%;
+            min-width: 150px;
+            max-width: 300px;
+            height: 100%;
+            background-color: #171616;
+            position: fixed;
+            top: 50px;
+            float: left;
+            padding: 25px 0 0 0;
+        }
+
+        aside a {
+            display: block;
+            line-height: 40px;
+            border-right: 4px solid transparent;
+            cursor: pointer;
+            transition: background-color .3s linear, border-right-color .3s linear, color .3s linear;
+            color: gray;
+            padding: 0 0 0 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        aside a:hover,
+        aside a.current {
+            background-color: #1d1b1b;
+            border-right-color: #fdcc1c;
+            color: white;
+        }
+
+        #main {
+            width: 100%;
+            float: left;
+            overflow-x: hidden;
+        }
+
+        .sub {
+            width: 100%;
+            background-color: #ebebeb;
+            overflow: hidden;
+            padding: 28px 0 0 20px;
+        }
+
+        .sub a {
+            display: inline-block;
+            min-width: 110px;
+            background-color: #f2f2f2;
+            cursor: pointer;
+            border-radius: 3px 3px 0 0;
+            transition: background-color .5s, color .5s;
+            color: #cccccc;
+            padding: 2px 0 0 0;
+            line-height: 35px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .sub a:hover,
+        .sub a.current {
+            color: gray;
+            background-color: white;
+        }
+
+        /* Table */
+        table {
+            border-color: gray;
+            line-height: 20px;
+        }
+
+        .sp-table {
+            width: 98%;
+            margin: 15px;
+        }
+
+        .sp-table th {
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .sp-table thead.stay {
+            position: fixed;
+            top: 0;
+            visibility: hidden;
+        }
+
+        .sp-table th,
+        .sp-table td {
+            border-bottom: 1px solid #e6e6e6;
+            padding: 8px 8px;
+        }
+
+        /* Striped */
+        .sp-table-striped tbody tr:nth-of-type(odd) td {
+            background-color: #fafafa;
+        }
+
+        /* Hover */
+        .sp-table-hover tbody tr:hover td {
+            background-color: #ededed;
+        }
+
+        .opacity {
+            opacity: 0;
+        }
+
+        /* Initial body */
+        body {
+            left: 0;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Initial menu */
+        .menu {
+            background: #202024;
+
+            left: -285px;
+            /* start off behind the scenes */
+            height: 100%;
+            position: fixed;
+            width: 285px;
+        }
+
+        /* Basic styling */
+
+        .jumbotron {
+            background-image: url('https://images.unsplash.com/photo-1430916273432-273c2db881a0?ixlib=rb-0.3.5&q=80&fm=jpg&s=d02cb4a715e864f27160838616fa2412');
+            height: 100vh;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        .menu ul {
+            border-top: 1px solid #636366;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            border-bottom: 1px solid #636366;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 45px;
+            padding-bottom: 3px;
+            padding-left: 20px;
+            padding-top: 3px;
+        }
+
+        .menu a {
+            color: #fff;
+            font-size: 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .icon-close {
+            cursor: pointer;
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+
+        .icon-menu {
+            color: #fff;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            padding-bottom: 25px;
+            padding-left: 25px;
+            padding-top: 25px;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            background-color: #202024;
+        }
+
+        .icon-menu i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+
+        <!-- Menu "X" icon -->
+        <div class="icon-close">
+            <img src="https://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/close.png">
+        </div>
+
+        <!-- Menu -->
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Main body -->
+    <div class="jumbotron">
+
+        <div class="icon-menu">
+
+            Menu
+        </div>
+        <aside>
+            <a class="current">Home</a>
+            <a>Users</a>
+            <a>Schedule</a>
+            <a>Info</a>
+        </aside>
+        <div id="main">
+            <div class="sub">
+                <a class="current">Monday</a>
+                <a>Tuesday</a>
+                <a>Wednesday</a>
+                <a>Thursday</a>
+                <a>Friday</a>
+            </div>
+            <table class="sp-table sp-table-striped sp-table-hover">
+                <thead>
+                    <tr>
+                        <th>Table HeadingA</th>
+                        <th>Table HeadingB</th>
+                        <th>Table HeadingC</th>
+                        <th>Table HeadingD</th>
+                        <th>Table HeadingE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.sub > a').click(function () {
+                    $('.sub').find('.current').removeClass('current');
+                    $(this).addClass('current');
+                });
+                $('aside > a').click(function () {
+                    $('aside').find('.current').removeClass('current');
+                    $(this).addClass('current');
+                });
+                $('.ntfy i').click(function () {
+                    $(this).parent().toggleClass('gt').toggleClass('active');
+                });
+
+                var x = $('aside').width();
+                var margin = '50px 0 0 ' + x + 'px';
+                var width = $(window).width() - x;
+                $('#main').css({
+                    margin: margin,
+                    width: width
+                });
+
+                $(window).resize(function () {
+                    var x = $('aside').width();
+                    var margin = '50px 0 0 ' + x + 'px';
+                    var width = $(window).width() - x;
+                    $('#main').css({
+                        margin: margin,
+                        width: width
+                    });
+                });
+            });
+        </script>
+        <script>
+            var main = function () {
+                /* Push the body and the nav over by 285px over */
+                $('.icon-menu').click(function () {
+                    $('.menu').animate({
+                        left: "0px"
+                    }, 200);
+
+                    $('body').animate({
+                        left: "285px"
+                    }, 200);
+                });
+
+                /* Then push them back */
+                $('.icon-close').click(function () {
+                    $('.menu').animate({
+                        left: "-285px"
+                    }, 200);
+
+                    $('body').animate({
+                        left: "0px"
+                    }, 200);
+                });
+            };
+
+
+            $(document).ready(main);
+        </script>
+</body>
+
+</html>

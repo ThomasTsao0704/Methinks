@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.1/dist/ScrollTrigger.min.js"></script>
+    <style>
+        body {
+            width: 100vw;
+            background: #fff;
+        }
+
+        .frame {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 999;
+            width: calc(100% - 30px);
+            height: calc(100% - 30px);
+            border: 2px solid #fff;
+            box-sizing: border-box;
+        }
+
+        .section {
+            position: relative;
+            width: 100%;
+            height: 3000px;
+            opacity: 0;
+        }
+
+        .section .scene {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .section .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .section .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .section .item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .section .graphic {
+            position: absolute;
+            width: 10vw;
+            height: 10vw;
+            background: #fff;
+            border-radius: 100%;
+        }
+
+        .first-content {
+            opacity: 1;
+        }
+
+        .first-content .background {
+            background: url(https://picsum.photos/seed/photo1/3000) center center no-repeat;
+            background-size: cover;
+        }
+
+        .first-content .graphic.-graphic1 {
+            top: 20%;
+            right: 40%;
+        }
+
+        .first-content .graphic.-graphic2 {
+            bottom: 30%;
+            left: 25%;
+        }
+
+        .first-content .graphic.-graphic3 {
+            bottom: 30%;
+            right: 30%;
+        }
+
+        .second-content .background {
+            background: url(https://picsum.photos/seed/photo2/3000) center center no-repeat;
+            background-size: cover;
+        }
+
+        .second-content .graphic.-graphic1 {
+            top: 25%;
+            left: 20%;
+        }
+
+        .second-content .graphic.-graphic2 {
+            bottom: 25%;
+            left: 30%;
+        }
+
+        .second-content .graphic.-graphic3 {
+            bottom: 40%;
+            right: 25%;
+        }
+
+        .third-content .background {
+            background: url(https://picsum.photos/seed/photo3/3000) center center no-repeat;
+            background-size: cover;
+        }
+
+        .third-content .graphic.-graphic1 {
+            top: 15%;
+            left: 30%;
+        }
+
+        .third-content .graphic.-graphic2 {
+            bottom: 30%;
+            left: 20%;
+        }
+
+        .third-content .graphic.-graphic3 {
+            top: 30%;
+            right: 25%;
+        }
+
+        .fourth-content .background {
+            background: url(https://picsum.photos/seed/photo15/3000) center center no-repeat;
+            background-size: cover;
+        }
+
+        .fourth-content .graphic.-graphic1 {
+            top: 20%;
+            right: 30%;
+        }
+
+        .fourth-content .graphic.-graphic2 {
+            bottom: 25%;
+            left: 25%;
+        }
+
+        .fourth-content .graphic.-graphic3 {
+            bottom: 30%;
+            right: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class=" app">
+        <div class="frame"></div>
+        <section class="section first-content">
+            <div class="scene">
+                <div class="background"></div>
+                <div class="object">
+                    <div class="item -item1">
+                        <div class="graphic -graphic1"></div>
+                    </div>
+                    <div class="item -item2">
+                        <div class="graphic -graphic2"></div>
+                    </div>
+                    <div class="item -item3">
+                        <div class="graphic -graphic3"></div>
+                    </div>
+                </div>
+                <div class="text">
+                    <p class="paragraph">Hello CodePen!<br />I'm Yusuke.<br />I love WebDev!</p>
+                </div>
+            </div>
+        </section>
+        <section class="section second-content">
+            <div class="scene">
+                <div class="background"></div>
+                <div class="object">
+                    <div class="item -item1">
+                        <div class="graphic -graphic1"></div>
+                    </div>
+                    <div class="item -item2">
+                        <div class="graphic -graphic2"></div>
+                    </div>
+                    <div class="item -item3">
+                        <div class="graphic -graphic3"></div>
+                    </div>
+                </div>
+                <div class="text">
+                    <p class="paragraph">I love game.<br />I love anime.<br />I love car.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section third-content">
+            <div class="scene">
+                <div class="background"></div>
+                <div class="object">
+                    <div class="item -item1">
+                        <div class="graphic -graphic1"></div>
+                    </div>
+                    <div class="item -item2">
+                        <div class="graphic -graphic2"></div>
+                    </div>
+                    <div class="item -item3">
+                        <div class="graphic -graphic3"></div>
+                    </div>
+                </div>
+                <div class="text">
+                    <p class="paragraph">Love conquers.<br />Hope fuels.<br />Kindness shapes.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section fourth-content">
+            <div class="scene">
+                <div class="background"></div>
+                <div class="object">
+                    <div class="item -item1">
+                        <div class="graphic -graphic1"></div>
+                    </div>
+                    <div class="item -item2">
+                        <div class="graphic -graphic2"></div>
+                    </div>
+                    <div class="item -item3">
+                        <div class="graphic -graphic3"></div>
+                    </div>
+                </div>
+                <div class="text">
+                    <p class="paragraph">Music soothes.<br />Wisdom guides.<br />Patience grows.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        new Vue({
+            el: '.app',
+
+            mounted() {
+                const scrub = 2;
+                const zoomEndBackground = 1.5;
+                const zoomEndText = 4;
+                const markers = false;
+                const ease = 'none';
+
+                gsap.to('.first-content .background', {
+                    scale: zoomEndBackground,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.first-content',
+                        start: 'top top',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.first-content .item.-item1', {
+                    scale: zoomEndBackground * 1.5,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.first-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.first-content .item.-item2', {
+                    scale: zoomEndBackground * 2,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.first-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.first-content .item.-item3', {
+                    scale: zoomEndBackground * 4,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.first-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.first-content .text', {
+                    scale: zoomEndText,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.first-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.first-content .text', {
+                    opacity: 0,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.first-content',
+                        start: 'center 100%',
+                        end: 'center 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.second-content .background', {
+                    scale: zoomEndBackground,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.second-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.fromTo('.second-content', {
+                    opacity: 0
+                },
+                    {
+                        opacity: 1,
+                        ease: ease,
+                        scrollTrigger: {
+                            markers: markers,
+                            trigger: '.second-content',
+                            start: 'top 100%',
+                            end: 'top top',
+                            scrub: scrub
+                        }
+                    });
+
+
+
+                gsap.to('.second-content .item.-item1', {
+                    scale: zoomEndBackground * 1.5,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.second-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.second-content .item.-item2', {
+                    scale: zoomEndBackground * 2,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.second-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.second-content .item.-item3', {
+                    scale: zoomEndBackground * 4,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.second-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.second-content .text', {
+                    scale: zoomEndText,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.second-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.second-content .text', {
+                    opacity: 0,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.second-content',
+                        start: 'center 100%',
+                        end: 'center 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.third-content .background', {
+                    scale: zoomEndBackground,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.third-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.fromTo('.third-content', {
+                    opacity: 0
+                },
+                    {
+                        opacity: 1,
+                        ease: ease,
+                        scrollTrigger: {
+                            markers: markers,
+                            trigger: '.third-content',
+                            start: 'top 100%',
+                            end: 'top top',
+                            scrub: scrub
+                        }
+                    });
+
+
+
+                gsap.to('.third-content .item.-item1', {
+                    scale: zoomEndBackground * 1.5,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.third-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.third-content .item.-item2', {
+                    scale: zoomEndBackground * 2,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.third-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.third-content .item.-item3', {
+                    scale: zoomEndBackground * 4,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.third-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.third-content .text', {
+                    scale: zoomEndText,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.third-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.third-content .text', {
+                    opacity: 0,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.third-content',
+                        start: 'center 100%',
+                        end: 'center 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.fourth-content .background', {
+                    scale: zoomEndBackground,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.fourth-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.fromTo('.fourth-content', {
+                    opacity: 0
+                },
+                    {
+                        opacity: 1,
+                        ease: ease,
+                        scrollTrigger: {
+                            markers: markers,
+                            trigger: '.fourth-content',
+                            start: 'top 100%',
+                            end: 'top top',
+                            scrub: scrub
+                        }
+                    });
+
+
+
+                gsap.to('.fourth-content .item.-item1', {
+                    scale: zoomEndBackground * 1.5,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.fourth-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.fourth-content .item.-item2', {
+                    scale: zoomEndBackground * 2,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.fourth-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.fourth-content .item.-item3', {
+                    scale: zoomEndBackground * 4,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.fourth-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.fourth-content .text', {
+                    scale: zoomEndText,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.fourth-content',
+                        start: 'top 100%',
+                        end: 'bottom 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+
+                gsap.to('.fourth-content .text', {
+                    opacity: 0,
+                    ease: ease,
+                    scrollTrigger: {
+                        markers: markers,
+                        trigger: '.fourth-content',
+                        start: 'center 100%',
+                        end: 'center 0%',
+                        scrub: scrub
+                    }
+                });
+
+
+            }
+        });</script>
+
+</body>
+
+</html>

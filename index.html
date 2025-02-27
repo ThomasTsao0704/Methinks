@@ -4,104 +4,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock</title>
+    <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400;300' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"></script>
     <link rel="stylesheet" media="screen" href="https://madebyunbranded.com/assets/unbranded.ui.css?v=1696966008"
         async />
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Initial body */
+        body {
+            /*
+            left: 0;
+            margin: 0;
+            overflow: hidden;
+            position: relative;*/
+            text-align: center;
+        }
+
+        /* Initial menu */
+        .menu {
+            background: #202024;
+            left: -285px;
+            start off behind the scenes height: 100%;
+            position: fixed;
+            width: 285px;
+        }
+
+        /* Basic styling 
+
+        .jumbotron {
+            height: 100vh;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    */
+        .menu ul {
+            border-top: 1px solid #636366;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            border-bottom: 1px solid #636366;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 45px;
+            padding-bottom: 3px;
+            padding-left: 20px;
+            padding-top: 3px;
+        }
+
+        .menu a {
+            color: #fff;
+            font-size: 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .icon-close {
+            cursor: pointer;
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+
+        .icon-menu {
+            color: #fff;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            padding-bottom: 25px;
+            padding-left: 25px;
+            padding-top: 25px;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            background-color: #202024;
+        }
+
+        .icon-menu i {
+            margin-right: 5px;
+        }
+
+        .hero {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 80%;
+            width: 90%;
+        }
+    </style>
 </head>
 
 <body>
-    <section class="hero mp">
-        <div class="h2">
-            <h2>
-                要知道你打撲克牌時，總有一個人會倒楣，如果你看看四周看不出誰要倒楣了，那就是你自己了。<br><strong>狀況會重複, 因為人的天性不會改變</strong>
-            </h2>
+    <div class="menu">
+
+        <!-- Menu "X" icon -->
+        <div class="icon-close">
+            <img src="https://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/close.png">
         </div>
-        <div class="h1">
-            <h1>
-                <strong>Thomas</strong>STOCK
-            </h1>
+
+        <!-- Menu -->
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="nav1.html">Blog</a></li>
+            <li><a href="3D.html">Help</a></li>
+            <li><a href="video.html">Contact</a></li>
+        </ul>
+    </div>
+    <!-- Main body -->
+    <div class="jumbotron">
+        <div class="icon-menu">
+            Menu
         </div>
-    </section>
+    </div>
     <section>
-        <!-- TradingView Widget BEGIN -->
-        <div class="tradingview-widget-container">
-            <div class="tradingview-widget-container__widget"></div>
-            <div class="tradingview-widget-copyright"></div>
-            <script type="text/javascript"
-                src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-                    {
-                        "symbols": [
-                            {
-                                "description": "美元/台幣",
-                                "proName": "FX_IDC:USDTWD"
-                            },
-                            {
-                                "description": "美元/日幣",
-                                "proName": "FX_IDC:USDJPY"
-                            },
-                            {
-                                "description": "美元/人民幣",
-                                "proName": "FX_IDC:USDCNH"
-                            },
-                            {
-                                "description": "美元/韓圜",
-                                "proName": "FX_IDC:USDKRW"
-                            },
-                            {
-                                "description": "美元/黃金",
-                                "proName": "TVC:GOLD"
-                            }
-                        ],
-                            "showSymbolLogo": true,
-                                "isTransparent": true,
-                                    "displayMode": "adaptive",
-                                        "colorTheme": "light",
-                                            "locale": "zh_TW"
-                    }
-                </script>
+        <div class="text-wrapper">
+            <h3>歡迎來到我的個人品牌網站</h3>
+            <p>這裡包含我的個人資訊與股票市場觀點</p>
+            <p>要知道你打撲克牌時，總有一個人會倒楣，如果你看看四周看不出誰要倒楣了，那就是你自己了。<br><strong>狀況會重複, 因為人的天性不會改變</strong>
+            </p>
+        </div>
+    </section>>
+    <!-- TradingView Widget BEGIN -->
+    <section class="hero container">
+        <div class="container">
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+            async>
+                {
+                    "symbols": [
+                        {
+                            "description": "美元/台幣",
+                            "proName": "FX_IDC:USDTWD"
+                        },
+                        {
+                            "description": "美元/日幣",
+                            "proName": "FX_IDC:USDJPY"
+                        },
+                        {
+                            "description": "美元/人民幣",
+                            "proName": "FX_IDC:USDCNH"
+                        },
+                        {
+                            "description": "美元/韓圜",
+                            "proName": "FX_IDC:USDKRW"
+                        },
+                        {
+                            "description": "美元/黃金",
+                            "proName": "TVC:GOLD"
+                        }
+                    ],
+                        "showSymbolLogo": true,
+                            "isTransparent": true,
+                                "displayMode": "adaptive",
+                                    "colorTheme": "light",
+                                        "locale": "zh_TW"
+                }
+            </script>
+        <div style="text-align: center">
+            <iframe src="https://thomastsao0704.github.io/stock/html/WebDisplay.html" style="width: 90%; height: 80vh;">
+            </iframe>
         </div>
         <!-- TradingView Widget END -->
-        <div style="text-align: center">
-            <iframe src="https://thomastsao0704.github.io/stock/html/WebDisplay.html" frameborder="0" marginheight="0" marginwidth="0"
-width="100%" height="100%" scrolling="auto">
-</iframe>
-        <a href="https://script.google.com/macros/s/AKfycbwpOB942-UGv5fEwPFRDyvdHUX77WhFH-kytDBU9RqELwh5Rl5XtpfTD49ApbBVjpE71w/exec" id="login">
-           Privacy Policy
-        </a>
-        <a href="https://thomastsao0704.github.io/stock/Policy.html">Link</a>
         </div>
     </section>
     <main>
-        <section>
-            <div class="container">
-                <iframe
-                    src="./Policy.html"
-                    style="width: 100%; height: 100vh; border: 0; padding: 0"></iframe>
-            </div>
-        </section>
-<section  class="container">
-    <div id="search_wrapper_test">
-        <input id="search_test"><i></i>
-        <input id="search_test2"><i></i>
-    </div>
-</section>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./bank.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/series-label.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="./bank.js"></script>
 
-        <section>
-                <div class="view data-wrap">        
-                    <div id="data"></div>
-                </div>
-        </section>
         <!-- Seach -->
         <div>
             <div class="container">
@@ -212,96 +292,8 @@ width="100%" height="100%" scrolling="auto">
                     </div>
                 </div>
             </div>
-            <!--</div>-->
-            <!--horizontal scroll-->
         </section>
     </main>
-    <section>
-        <h2>Service</h2>
-        <div class="service">
-            <h3>Brand Strategy</h3>
-            <p>A plan for developing your brand based on discovering your potential.<br>
-            <ul>
-                <li>Research</li>
-                <li>Discovering the Brand Uniqueness</li>
-                <li>Discovering your Value Proposition</li>
-                <li>Brand Personality</li>
-                <li>Visual Identity (Logotype, Typography & Colour Palette)</li>
-                <li>Packaging Design</li>
-                <li>Graphic Design</li>
-                <li>Brand Guidelines</li>
-                <li>Photography & Video Production</li>
-            </ul>
-            </p>
-        </div>
-        <div class="service">
-            <h3>Websites</h3>
-            <p>
-                Our website design showcases your brand's uniqueness and engages your audience. We develop
-                custom solutions that are both easy to use and tailored to specific business requirements.
-            <ul>
-                <li>UI/UX Design</li>
-                <li>Sotware UI design</li>
-                <li>Web app design& development</li>
-                <li>Frontend & Backend Development</li>
-                <li>E-commerce</li>
-                <li>Inrteractive websites design & development</li>
-            </ul>
-            </p>
-        </div>
-        </div>
-        <div class="grid logici">
-            <div class="g6 s-g4 m-g3">
-                <div class="brand">logo</div>
-            </div>
-            <div class="g6 s-g4 m-g3">
-                <div class="brand">logo</div>
-            </div>
-            <div class="g6 s-g4 m-g3">
-                <div class="brand">logo</div>
-            </div>
-            <div class="g6 s-g4 m-g3">
-                <div class="brand">logo</div>
-            </div>
-
-            <div class="g6 s-g4 m-g3">
-                <div class="brand">logo</div>
-            </div>
-            <div class="g6 s-g4 m-g3">
-                <div class="brand">logo</div>
-            </div>
-            <div class="g6 s-g4 m-g3">
-                <div class="brand">logo</div>
-            </div>
-            <div class="g6 s-g4 m-g3">
-                <div class="brand">logo</div>
-            </div>
-        </div>
-    </section>
-    <section class="lets mp">
-        <div class="grid">
-            <div class="g8 m-g6">
-                <p>Let’s<br> make it<br> all about<br> you</p>
-            </div>
-            <div class="g4 m-g6">
-                <div class="get_sh">
-                    <img class="get_sh_1" src="" alt="">
-                    <img class="get_sh_2" src="" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-        <div class="grid">
-            <div class="g12">
-                <div class="news">
-                    <div class="news_inner">
-                        Yes! We do good sh*t! Yes! We do good sh*t! Yes! We do good sh*t! Yes! We do good sh*t!
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://madebyunbranded.com/assets/lenis.js"></script>
@@ -324,7 +316,34 @@ width="100%" height="100%" scrolling="auto">
     <script src="js/search.js"></script>
     <script src="js/drop.js"></script>
     <script src="js/google.js"></script>
+    <script>
+        var main = function () {
+            /* Push the body and the nav over by 285px over */
+            $('.icon-menu').click(function () {
+                $('.menu').animate({
+                    left: "0px"
+                }, 200);
 
+                $('body').animate({
+                    left: "285px"
+                }, 200);
+            });
+
+            /* Then push them back */
+            $('.icon-close').click(function () {
+                $('.menu').animate({
+                    left: "-285px"
+                }, 200);
+
+                $('body').animate({
+                    left: "0px"
+                }, 200);
+            });
+        };
+
+
+        $(document).ready(main);
+    </script>
 </body>
 
 </html>
