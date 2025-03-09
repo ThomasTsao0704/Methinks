@@ -7,6 +7,9 @@
     <title>多頁式網頁 - 股市</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"></script>
     <style>
         body,
         html {
@@ -20,6 +23,27 @@
         section {
             min-height: 100vh;
             padding: 60px 20px;
+        }
+
+        /* 覆蓋層，預設遮蔽頁面內容 */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            flex-direction: column;
+        }
+
+        #overlay input {
+            margin: 10px;
+            padding: 10px;
+            font-size: 1.2em;
         }
 
         /* 導覽列 */
@@ -44,10 +68,278 @@
             object-fit: cover;
             margin-bottom: 20px;
         }
+
+        /* 股票操作方向 */
+
+        .products__sort {
+            display: flex;
+            flex-flow: wrap;
+        }
+
+        .products__sort .button {
+            padding: 10px 24px;
+            margin: 0 12px 12px 0;
+            border: none;
+            border-radius: 6px;
+            background-color: rgba(0, 127, 212, 0.5);
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .products__sort .button:hover {
+            background-color: #001988;
+        }
+
+        .products__wrap {
+            display: flex;
+            flex-flow: wrap;
+            margin: 24px 5px;
+        }
+
+        .products__wrap .product {
+            height: 97px;
+            width: 97px;
+            padding: 10px 8px;
+            margin: 0 14px 14px 0;
+            border: none;
+            border-radius: 8px;
+            background-color: rgba(0, 127, 212, 0.5);
+            color: #001988;
+            text-align: center;
+        }
+
+        .products .sort-radio {
+            display: none;
+        }
+
+        .products .sort-radio[id=longe]:checked~.products__wrap .product[data-product-type=longe] {
+            order: -1;
+            background-color: #880012;
+            color: #fff;
+        }
+
+        .products .sort-radio[id=longe]:checked~.products__sort .button[for=longe] {
+            background-color: #880012;
+        }
+
+        .products .sort-radio[id=short]:checked~.products__wrap .product[data-product-type=short] {
+            order: -1;
+            background-color: #007888;
+            color: #fff;
+        }
+
+        .products .sort-radio[id=short]:checked~.products__sort .button[for=short] {
+            background-color: #007888;
+        }
+
+        .products .sort-radio[id=Alert]:checked~.products__wrap .product[data-product-type=Alert] {
+            order: -1;
+            background-color: #ad9e11;
+            color: #fff;
+        }
+
+        .products .sort-radio[id=Alert]:checked~.products__sort .button[for=Alert] {
+            background-color: #ad9e11;
+        }
+
+
+
+        /* search */
+
+        .align-left {
+            text-align: left;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .mb20 {
+            margin-bottom: 20px;
+        }
+
+        .light-text {
+            color: #929292;
+        }
+
+        .button {
+            padding: 0 20px;
+            font-size: 16px;
+            line-height: 32px;
+            color: #fff;
+            cursor: pointer;
+            background-color: #111;
+            border: 1px solid #111;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .button:hover {
+            color: #111;
+            background-color: #fff;
+        }
+
+        .button.secondary {
+            color: #929292;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+
+        .button.secondary:hover {
+            color: #111;
+            background-color: #fff;
+            border: 1px solid #111;
+        }
+
+        .heading-lv1 {
+            margin-bottom: 26px;
+            font-size: 36px;
+            font-weight: bold;
+            color: #1D4ED8;
+        }
+
+        .dropdown-heading {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #929292;
+        }
+
+        .select {
+            padding-top: 0;
+            padding-right: 40px;
+            padding-bottom: 0;
+            padding-left: 10px;
+            font-size: 14px;
+            line-height: 2;
+            cursor: pointer;
+            background-color: #fff;
+            background-image: url(https://dl.dropbox.com/s/ru1dbh5omn3deeh/arrow.svg?dl=0);
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 10px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: all 0.2s ease-out;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            /* delete browser picker */
+        }
+
+        .select::-ms-expand {
+            display: none;
+            /* delete browser picker */
+        }
+
+        .select:hover {
+            border: 1px solid #929292;
+        }
+
+        .select:active,
+        .select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #1D4ED8;
+        }
+
+        .container {
+            max-width: 1600px;
+            padding-top: 20px;
+            margin: 0 auto;
+        }
+
+
+        .table-handler {
+            margin-bottom: 16px;
+        }
+
+        .table-handler>* {
+            display: inline-block;
+        }
+
+        .table-handler-dropdown-cell {
+            padding-right: 16px;
+        }
+
+        .table-wrapper {
+            height: 70vh;
+            overflow-y: scroll;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-head {
+            line-height: 48px;
+        }
+
+        .table-head th {
+            position: sticky;
+            top: 0;
+            font-weight: bold;
+            color: #1D4ED8;
+            background-color: #fff;
+            box-shadow: 0 2px 0 0 #1D4ED8;
+        }
+
+        .table-row {
+            line-height: 40px;
+            color: #111;
+        }
+
+        .table-row:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+
+        .table-row:nth-child(odd) {
+            background-color: #eee;
+        }
+
+        .table-cell {
+            padding: 0 6px;
+            font-size: 14px;
+            white-space: pre;
+        }
+
+        .table-nowrap {
+            margin: 0;
+            padding: 0;
+            line-height: 16px;
+        }
+
+        .no-results {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .no-results-message {
+            font-size: 22px;
+            color: #929292;
+        }
     </style>
 </head>
 
 <body>
+    <!-- 覆蓋層：遮蔽所有內容，直到輸入正確密碼 -->
+    <div id="overlay">
+        <h2>請輸入密碼以進入個人頁面</h2>
+        <input type="password" id="passwordInput" placeholder="密碼">
+        <button id="submitBtn" class="btn btn-primary">確認</button>
+        <p id="errorMsg" style="color: red; display: none;">密碼錯誤，請再試一次。</p>
+    </div>
     <!-- 導覽列 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
@@ -90,9 +382,144 @@
                 </div>
             </div>
         </section>
+        <!-- TradingView Widget BEGIN -->
+        <section class="hero container">
+            <div class="container">
+                <script type="text/javascript"
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                        {
+                            "symbols": [
+                                {
+                                    "description": "美元/台幣",
+                                    "proName": "FX_IDC:USDTWD"
+                                },
+                                {
+                                    "description": "美元/日幣",
+                                    "proName": "FX_IDC:USDJPY"
+                                },
+                                {
+                                    "description": "美元/人民幣",
+                                    "proName": "FX_IDC:USDCNH"
+                                },
+                                {
+                                    "description": "美元/韓圜",
+                                    "proName": "FX_IDC:USDKRW"
+                                },
+                                {
+                                    "description": "美元/黃金",
+                                    "proName": "TVC:GOLD"
+                                }
+                            ],
+                                "showSymbolLogo": true,
+                                    "isTransparent": true,
+                                        "displayMode": "adaptive",
+                                            "colorTheme": "light",
+                                                "locale": "zh_TW"
+                        }
+                    </script>
+                <div style="text-align: center">
+                    <iframe src="https://thomastsao0704.github.io/stock/html/WebDisplay.html"
+                        style="width: 90%; height: 80vh;">
+                    </iframe>
+                </div>
+                <!-- TradingView Widget END -->
+            </div>
+        </section>
+        <!-- Seach -->
+        <section>
+            <div class="container">
+                <h3>股票查詢</h3>
+                <h1 class="heading-lv1">Products</h1>
+                <div class="table-app" id="product-table-app">
+                    <div class="table-handler">
+                        <div class="table-handler-dropdown-cell">
+                            <div class="dropdown">
+                                <h3 class="dropdown-heading">
+                                    <i class="fas fa-filter"></i> 市場類別
+                                </h3>
+                                <select class="select js-handle-table js-filter" id="filter-brand">
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-handler-dropdown-cell">
+                            <div class="dropdown">
+                                <h3 class="dropdown-heading">
+                                    <i class="fas fa-filter"></i> 集團分類
+                                </h3>
+                                <select class="select js-handle-table js-filter" id="filter-category">
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-handler-dropdown-cell">
+                            <div class="dropdown">
+                                <h3 class="dropdown-heading">
+                                    <i class="fas fa-sort-amount-up-alt"></i> Sort by
+                                </h3>
+                                <select class="select js-handle-table" id="sort-by">
+                                    <option value="none">-</option>
+                                    <option value="id">ID</option>
+                                    <option value="market_value">市值</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-handler-dropdown-cell">
+
+                            <!-- TODO: add label and create style -->
+
+                            <input type="checkbox" class="js-handle-table" id="toggle" value="hiding-out-of-stock" />
+                            <label for="toggle">Hiding Taipei Exchange Stocks 隱藏上櫃股票</label>
+                        </div>
+
+                    </div>
+                    <!-- /.table-handler -->
+                    <div class="table-wrapper">
+                        <table class="table" id="table">
+                            <thead>
+                                <tr class="table-head">
+                                    <th class="table-cell align-right">ID</th>
+                                    <th class="table-cell align-left">Name</th>
+                                    <th class="table-cell align-left">市場類別</th>
+                                    <th class="table-cell align-left">集團公司</th>
+                                    <!--<th class="table-cell align-right">股本</th> -->
+                                    <!--<th class="table-cell align-right">市值</th> -->
+                                    <!-- <th class="table-cell align-left">Status</th> -->
+                                    <th class="table-cell align-left">產業地位</th> <!-- Created at -->
+                                    <th class="table-cell align-left">業務細項</th> <!-- Updated at -->
+                                    <!-- <th class="table-cell align-left">上市日期</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Loop -->
+                            </tbody>
+                        </table>
+                        <div class="no-results hidden" id="no-results">
+                            <p class="no-results-message">No results found.</p>
+                        </div>
+                        <!-- /#no-results -->
+                    </div>
+                    <!-- /.table-wrapper -->
+                </div>
+                <!-- /.table-app -->
+            </div>
     </div>
+    </section>
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // 點擊確認按鈕時檢查密碼
+        document.getElementById('submitBtn').addEventListener('click', function () {
+            var input = document.getElementById('passwordInput').value;
+            if (input === "1234") {
+                // 密碼正確時隱藏遮蔽層
+                document.getElementById('overlay').style.display = "none";
+            } else {
+                document.getElementById('errorMsg').style.display = "block";
+            }
+        });
+    </script>
+    <script src="js/search.js"></script>
 </body>
 
 </html>
