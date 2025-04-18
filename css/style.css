@@ -20,7 +20,7 @@
     /* 頁首區塊 */
     /* 頁首區塊 */
     .header-section .intro {
-        background-image: url("/img/header.png");
+        background-image: url("./img/header.png");
         /* 確認根目錄路徑正確 */
         background-size: cover;
         background-repeat: no-repeat;
