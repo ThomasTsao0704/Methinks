@@ -24,7 +24,6 @@
         /* 確認根目錄路徑正確 */
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: center;
         background-position: top center; /* 這裡由 center 改成 top center */
         padding-top: 60px; /* 若有導覽列遮住圖片，可加內距 */
         min-height: 100vh;
