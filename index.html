@@ -7,6 +7,8 @@
     <title>多頁式網頁 - 政治</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+
     <style>
         /* Reset 與基本樣式 */
         #preloader {
@@ -184,7 +186,7 @@
 
         .blog-item img {
             width: 100%;
-            height: 180px;
+            height: 320px;
             object-fit: cover;
         }
 
@@ -210,10 +212,12 @@
     <!-- 預載動畫 (3秒) -->
     <div id="preloader" class="preloader">
         <!-- <img src="" alt="Logo"> -->
-        <h1>中立新聞</h1>
+        <h1>側影</h1>
+        <p>每個人都是側著看世界的，沒有人能全觀</p>
+        <p>Two Sides, One Reality | 立場之外，是人性</p>
     </div>
 
-    <!-- 導覽列 -->
+    <!-- 導覽列 
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">多頁新聞網</a>
@@ -239,7 +243,7 @@
             </div>
         </div>
     </nav>
-
+-->
     <!-- 主要內容 (預載動畫結束後顯示) -->
     <div id="main-content" style="display:none; margin-top:70px;">
         <!-- 頁首區塊 -->
@@ -255,13 +259,13 @@
                 </div>
             </div>
         </section>
-
-        <!-- 最新時事區塊 -->
+<!--
+        -- 最新時事區塊 --
         <section class="latest-news-section bg-light">
             <div class="container">
                 <h2>最新時事</h2>
                 <div class="latest-news">
-                    <!-- 5 篇新聞 -->
+                    -- 5 篇新聞 
                     <div class="news-item">
                         <img src="./img/521-5000x3333.jpg" alt="新聞1">
                         <div class="news-content">
@@ -297,14 +301,14 @@
                             <span class="badge bg-warning text-dark">觀點</span>
                         </div>
                     </div>
-                    <!-- View All 連結 -->
+                    -- View All 連結 --
                     <div class="news-item d-flex align-items-center justify-content-center">
                         <a href="#" class="stretched-link">View All</a>
                     </div>
                 </div>
             </div>
         </section>
-
+    -->
         <!-- 多元觀點區塊 -->
         <section class="opinions-section">
             <div class="container">
@@ -339,62 +343,135 @@
             <div class="container">
                 <h2>BLOG</h2>
                 <div class="blog-grid">
-                    <!-- 6 篇 Blog 文章 -->
                     <div class="blog-item">
-                        <img src="./img/498-5000x3333.jpg" alt="Blog1">
+                        <img src="./img/309-3872x2592.jpg" alt="Blog1">
                         <div class="blog-content">
                             <h5>Blog 標題 1</h5>
-                            <span class="badge bg-secondary">新聞</span>
-                            <a href="#" class="d-block mt-2">閱讀更多</a>
+                            <span class="badge bg-secondary">經濟</span>
+                            <button class="btn btn-link mt-2" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#blogModal"
+                                    data-title="Blog 標題 1"
+                                    data-content="
+                                    <p>這是第一段內容。</p>
+                                    <p>這是第二段內容。</p>
+                                    ">閱讀更多
+                            </button>
                         </div>
                     </div>
                     <div class="blog-item">
-                        <img src="./img/498-5000x3333.jpg" alt="Blog2">
+                        <img src="./img/blog2.jpg" alt="Blog2">
                         <div class="blog-content">
-                            <h5>Blog 標題 2</h5>
-                            <span class="badge bg-secondary">新聞</span>
-                            <a href="#" class="d-block mt-2">閱讀更多</a>
+                            <h5>這到底是誰比較危險？ [罷免領銜人vs國安共諜]</h5>
+                            <span class="badge bg-secondary">政治</span>
+                            <button class="btn btn-link mt-2" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#blogModal"
+                                    data-title="這到底是誰比較危險？"
+                                    data-content="<p></p>
+                                    <p></p>
+                                    <p>罷免案領銜人：被控幽靈連署，交保 50 萬</p>
+                                    <p>國安共諜：涉洩密，交保 20 萬</p>
+                                    <p>還是說，查真相的代價，遠高於搞間諜的風險？<br>如果連署資料10%是幽靈，那到底是作弊太拙劣？還是有人故意送上假資料栽贓？<br>這個問題其實牽涉到幾個層面的「制度漏洞」與「查核困難」，我們來分段解析。</p>
+                                    <p></p>
+                                    <p>一、「幽靈連署」是怎麼產生的？<br>
+                                        1. 抄寫戶政資料（違法取得）
+                                        有人可能利用工作職務、非法通路蒐集身分證字號與姓名，製作假的連署書。<br>
+                                        
+                                        2. 從「死亡未除戶」名單抄寫 例如高齡者、偏鄉人口、未報歿情形。<br>
+                                        
+                                        3. 瞎掰亂填 / 街頭唬弄連署 街頭志工亂簽名字，交差了事。</p>
+                                    <p>二、這些假連署，有誰「有動機送上去」？<br>
+                                    
+                                        假設1：真的想作弊拚過門檻<br>
+                                        
+                                        → 屬於「笨又壞」，企圖用假資料湊數。<br>
+                                        
+                                        假設2：反串滲透，故意送假資料製造爭議<br>
+                                        
+                                        → 屬於「壞又陰」，目的是讓罷免案無效、拖延、抹黑。<br>
+                                        
+                                        假設3：被基層志工亂搞、上層不知情<br>
+                                        
+                                        → 「不壞但鬆散」，組織控管問題大。</p>
+                                    <p>三、青年軍或一般人能不能查？<br>
+                                    
+                                        答案是：極度困難，但非完全不可能。<br>
+                                        
+                                        原因：<br>
+                                        
+                                        1. 連署人資料涉及個資，不能任意查詢。<br> 除非：
+                                        
+                                        是領銜人本人，且提出正當理由。
+                                        或由法院、監察院等司法機關進行調查。<br>
+                                        
+                                        2. 政府不會公布存歿狀態名單。<br> 除非：
+                                        
+                                        經由戶政事務所針對特定人申請查詢。
+                                        或家屬／利害關係人提供證明。<br>
+                                        
+                                        3. 青年軍若無法取得完整連署名單，即無從查起。<br>
+                                        → 中選會不會主動公布所有名單，頂多「核對過總數」與「有效比例」。</p>
+                                    <p>四、但這樣查證真有辦法嗎？<br>
+                                    
+                                        假設你是領銜人／助理：<br>
+                                        你可以用罷免案身份，逐筆申請戶政查詢存歿。<br>
+                                        可說明此舉是為了避免冒名連署，依法有正當性。<br>
+                                        但耗時、費工、還要寫狀紙。<br>
+                                        若你是罷免案領銜人，依法可以逐筆查詢連署人是否「在籍」或「已歿」。<br>
+                                        但如果有 10,000 人要查，光是戶籍謄本就要 150,000 元！</p>
+                                    <p>五、法治與政治反諷的荒謬點<br>
+                                    
+                                        「提出罷免案」是民主制度內的正當權利。<br>
+                                        
+                                        「查證罷免名單」卻要付出高額代價與法律風險？<br>
+                                        
+                                        連署造假 vs. 共諜案交保金額的落差，讓人不得不問： →「在台灣，到底是搞政治風險高，還是當間諜風險低？」"</p>
+                                閱讀更多
+                            </button>
                         </div>
                     </div>
-                    <div class="blog-item">
-                        <img src="./img/498-5000x3333.jpg" alt="Blog3">
-                        <div class="blog-content">
-                            <h5>Blog 標題 3</h5>
-                            <span class="badge bg-secondary">新聞</span>
-                            <a href="#" class="d-block mt-2">閱讀更多</a>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <img src="./img/498-5000x3333.jpg" alt="Blog4">
-                        <div class="blog-content">
-                            <h5>Blog 標題 4</h5>
-                            <span class="badge bg-secondary">新聞</span>
-                            <a href="#" class="d-block mt-2">閱讀更多</a>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <img src="./img/498-5000x3333.jpg" alt="Blog5">
-                        <div class="blog-content">
-                            <h5>Blog 標題 5</h5>
-                            <span class="badge bg-secondary">新聞</span>
-                            <a href="#" class="d-block mt-2">閱讀更多</a>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <img src="./img/498-5000x3333.jpg" alt="Blog6">
-                        <div class="blog-content">
-                            <h5>Blog 標題 6</h5>
-                            <span class="badge bg-secondary">新聞</span>
-                            <a href="#" class="d-block mt-2">閱讀更多</a>
-                        </div>
-                    </div>
+                    
+                    <!-- 可依此方式複製其他 blog-item -->
                 </div>
             </div>
         </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="blogModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        Modal content
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const blogModal = document.getElementById('blogModal');
+
+        blogModal.addEventListener('show.bs.modal', event => {
+            const button = event.relatedTarget;
+            const title = button.getAttribute('data-title');
+            const content = button.getAttribute('data-content');
+
+            blogModal.querySelector('.modal-title').textContent = title;
+            blogModal.querySelector('.modal-body').innerHTML = content;
+        });
+
+    </script>
     <script>
         window.addEventListener('load', function () {
             setTimeout(function () {
