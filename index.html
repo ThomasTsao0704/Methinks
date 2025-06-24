@@ -24,15 +24,15 @@
             font-family: sans-serif;
             color: #fff;
             text-shadow: 0 1px 2px #000;
+        }
 
-            &::before {
-                content: "";
-                inset: 0;
-                display: block;
-                position: absolute;
-                background-color: #000;
-                opacity: 0.4;
-            }
+        #preloader::before {
+            content: "";
+            inset: 0;
+            display: block;
+            position: absolute;
+            background-color: #000;
+            opacity: 0.4;
         }
 
         form {
@@ -46,10 +46,10 @@
             padding: 0;
             border: 2px solid #fff;
             border-radius: 4px;
+        }
 
-            &:focus-within {
-                border-color: #b02727;
-            }
+        fieldset:focus-within {
+            border-color: #b02727;
         }
 
         html {
@@ -297,7 +297,7 @@
                     <div class="row mb-3">
                         <div class="col-md-4"><img src="./img/選罷法.png" class="img-fluid rounded" alt="圖1"></div>
                         <div class="col-md-4"><img src="./img/內政部選罷法.png" class="img-fluid rounded" alt="圖2"></div>
-                        <div class="col-md-4"><img src="" class="img-fluid rounded" alt="圖3"></div>
+                        <div class="col-md-4"><img src="https://via.placeholder.com/150" class="img-fluid rounded" alt="圖3"></div>
                     </div>
 
                     <div class="article-content content-preview">
@@ -366,7 +366,7 @@
                 <div class="modal-dialog modal-dialog-centered modal-xl">
                     <div class="modal-content bg-transparent border-0">
                         <div class="modal-body p-0 text-center">
-                            <img id="modalImage" src="" class="img-fluid rounded" alt="放大圖">
+                            <img id="modalImage" src="https://via.placeholder.com/600x400" class="img-fluid rounded" alt="放大圖">
                         </div>
                     </div>
                 </div>
@@ -417,10 +417,7 @@
                         <h5>Blog 標題 1</h5>
                         <span class="badge bg-secondary">經濟</span>
                         <button class="btn btn-link mt-2" data-bs-toggle="modal" data-bs-target="#blogModal"
-                            data-article-id="1" data-title="Blog 標題 1" data-content="
-                                    <p>這是第一段內容。</p>
-                                    <p>這是第二段內容。</p>
-                                    ">閱讀更多
+                            data-article-id="1" data-title="Blog 標題 1" data-content="詳細內容">閱讀更多
                         </button>
                     </div>
                 </div>
@@ -430,66 +427,7 @@
                         <h5>這到底是誰比較危險？ [罷免領銜人vs國安共諜]</h5>
                         <span class="badge bg-secondary">政治</span>
                         <button class="btn btn-link mt-2" data-bs-toggle="modal" data-bs-target="#blogModal"
-                            data-article-id="2" data-title="這到底是誰比較危險？" data-content="<p></p>
-                                    <p></p>
-                                    <p>罷免案領銜人：被控幽靈連署，交保 50 萬</p>
-                                    <p>國安共諜：涉洩密，交保 20 萬</p>
-                                    <p>還是說，查真相的代價，遠高於搞間諜的風險？<br>如果連署資料10%是幽靈，那到底是作弊太拙劣？還是有人故意送上假資料栽贓？<br>這個問題其實牽涉到幾個層面的「制度漏洞」與「查核困難」，我們來分段解析。</p>
-                                    <p></p>
-                                    <p>一、「幽靈連署」是怎麼產生的？<br>
-                                        1. 抄寫戶政資料（違法取得）
-                                        有人可能利用工作職務、非法通路蒐集身分證字號與姓名，製作假的連署書。<br>
-                                        
-                                        2. 從「死亡未除戶」名單抄寫 例如高齡者、偏鄉人口、未報歿情形。<br>
-                                        
-                                        3. 瞎掰亂填 / 街頭唬弄連署 街頭志工亂簽名字，交差了事。</p>
-                                    <p>二、這些假連署，有誰「有動機送上去」？<br>
-                                    
-                                        假設1：真的想作弊拚過門檻<br>
-                                        
-                                        → 屬於「笨又壞」，企圖用假資料湊數。<br>
-                                        
-                                        假設2：反串滲透，故意送假資料製造爭議<br>
-                                        
-                                        → 屬於「壞又陰」，目的是讓罷免案無效、拖延、抹黑。<br>
-                                        
-                                        假設3：被基層志工亂搞、上層不知情<br>
-                                        
-                                        → 「不壞但鬆散」，組織控管問題大。</p>
-                                    <p>三、青年軍或一般人能不能查？<br>
-                                    
-                                        答案是：極度困難，但非完全不可能。<br>
-                                        
-                                        原因：<br>
-                                        
-                                        1. 連署人資料涉及個資，不能任意查詢。<br> 除非：
-                                        
-                                        是領銜人本人，且提出正當理由。
-                                        或由法院、監察院等司法機關進行調查。<br>
-                                        
-                                        2. 政府不會公布存歿狀態名單。<br> 除非：
-                                        
-                                        經由戶政事務所針對特定人申請查詢。
-                                        或家屬／利害關係人提供證明。<br>
-                                        
-                                        3. 青年軍若無法取得完整連署名單，即無從查起。<br>
-                                        → 中選會不會主動公布所有名單，頂多「核對過總數」與「有效比例」。</p>
-                                    <p>四、但這樣查證真有辦法嗎？<br>
-                                    
-                                        假設你是領銜人／助理：<br>
-                                        你可以用罷免案身份，逐筆申請戶政查詢存歿。<br>
-                                        可說明此舉是為了避免冒名連署，依法有正當性。<br>
-                                        但耗時、費工、還要寫狀紙。<br>
-                                        若你是罷免案領銜人，依法可以逐筆查詢連署人是否「在籍」或「已歿」。<br>
-                                        但如果有 10,000 人要查，光是戶籍謄本就要 150,000 元！</p>
-                                    <p>五、法治與政治反諷的荒謬點<br>
-                                    
-                                        「提出罷免案」是民主制度內的正當權利。<br>
-                                        
-                                        「查證罷免名單」卻要付出高額代價與法律風險？<br>
-                                        
-                                        連署造假 vs. 共諜案交保金額的落差，讓人不得不問： →「在台灣，到底是搞政治風險高，還是當間諜風險低？」" </p>
-                            閱讀更多
+                            data-article-id="2" data-title="這到底是誰比較危險？" data-content="詳細內容">閱讀更多
                         </button>
                     </div>
                 </div>
@@ -515,8 +453,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
     </div>
 
     <!-- Bootstrap JS -->
